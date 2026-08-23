@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Meta 文档答疑员 · Agent 展示</title>
+<meta name="description" content="一个基于 Meta 官方开发者文档的答疑 Agent：在飞书提问，返回带官方链接的可核查结论。本页为静态展示，不接后端。" />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="Meta 文档答疑员 · Agent 展示" />
+<meta property="og:description" content="在飞书提问 WhatsApp / WABA 文档问题，1–2 分钟返回带官方链接的可核查结论。" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="badge-row">
+      <span class="pill pill--live">运行中 · Hermes Agent</span>
+      <span class="pill">静态展示，无后端</span>
+    </div>
+    <h1>Meta 文档答疑员</h1>
+    <p class="hero__sub">
+      在飞书里发一条文字问题，它去 Meta 官方开发者文档核对，把<strong>带官方链接的结论</strong>发回来。
+      只回答文档能支撑的问题；方案选型、退款投诉、个案诊断一律转人工，不编造。
+    </p>
+    <div class="hero__stats">
+      <div class="stat"><span class="stat__num">~15 分钟</span><span class="stat__label">人工查文档一题</span></div>
+      <div class="stat stat--arrow">→</div>
+      <div class="stat"><span class="stat__num accent">1–2 分钟</span><span class="stat__label">Agent 回一题</span></div>
+      <div class="stat"><span class="stat__num">100%</span><span class="stat__label">结论附官方链接</span></div>
+    </div>
+    <div class="hero__actions">
+      <a class="btn" href="https://applink.feishu.cn/client/bot/open?appId=cli_aa0a856b2939dcc2" target="_blank" rel="noopener">添加飞书机器人</a>
+      <a class="btn btn--ghost" href="#demo">先看它怎么答</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ DEMO ============ -->
+<section id="demo" class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>真实问答回放</h2>
+      <p>下面每一条都是 2026-08-15 飞书私聊里<strong>真实跑出来的原文</strong>，点击问题即可回放。本页不调用任何模型，答案为录制内容。</p>
+    </div>
+
+    <div class="demo-grid">
+      <!-- chat -->
+      <div class="phone">
+        <div class="phone__bar">
+          <div class="phone__avatar">文</div>
+          <div class="phone__id">
+            <strong>Meta 文档答疑员</strong>
+            <span>飞书 · 机器人</span>
+          </div>
+          <span class="phone__dot" title="在线"></span>
+        </div>
+
+        <div class="phone__body" id="chat">
+          <div class="day">2026-08-15</div>
+          <div class="msg msg--bot">
+            <div class="av">文</div>
+            <div class="bubble">
+              <p>你好，我是「Meta 文档答疑员」。发一个 WhatsApp / WABA 相关的文档问题给我，我会去官方文档核对后回答，并附上来源链接。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone__chips" id="chips"></div>
+
+        <form class="phone__input" id="composer" autocomplete="off">
+          <input id="userInput" type="text" placeholder="输入你的问题，命中演示库会回放" aria-label="演示输入框" />
+          <button type="submit" aria-label="发送">↑</button>
+        </form>
+      </div>
+
+      <!-- trace -->
+      <aside class="trace" id="trace">
+        <h3>这一轮它做了什么</h3>
+        <p class="trace__hint">点左侧任一问题，这里会显示该轮的真实执行轨迹与耗时。</p>
+        <ol class="trace__list" id="traceList"></ol>
+        <div class="trace__meta" id="traceMeta" hidden>
+          <div><span>回复耗时</span><strong id="mCost">—</strong></div>
+          <div><span>模型调用</span><strong id="mCalls">—</strong></div>
+          <div><span>飞书时间</span><strong id="mAt">—</strong></div>
+        </div>
+      </aside>
+    </div>
+
+    <p class="note">
+      本页只回放已验证问答，输入内容不会发到任何服务。想问自己的问题，请添加飞书机器人后私聊发送。
+    </p>
+    <p class="cta-inline">
+      <a class="btn btn--solid" href="https://applink.feishu.cn/client/bot/open?appId=cli_aa0a856b2939dcc2" target="_blank" rel="noopener">添加飞书机器人</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ 如何添加 ============ -->
+<section id="add" class="section section--alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>如何添加并开始提问</h2>
+      <p>网站只做展示。真正查官方文档、给出可核查结论，都在飞书私聊里完成。</p>
+    </div>
+    <ol class="howto">
+      <li><span class="howto__n">1</span><div><h4>点击「添加飞书机器人」</h4><p>会通过飞书官方链接打开「Meta 文档答疑员」会话。请先安装并登录飞书客户端或网页版。</p></div></li>
+      <li><span class="howto__n">2</span><div><h4>进入私聊，直接发文字问题</h4><p>例如「模板都有哪些类型」。不用加 @，不用填表。一次问一件事即可。</p></div></li>
+      <li><span class="howto__n">3</span><div><h4>等待 1–2 分钟看最终答案</h4><p>结论在前，并附 Meta 官方文档链接。方案选型、退款投诉、个案诊断会明确转人工。</p></div></li>
+    </ol>
+    <div class="callout">
+      <strong>打不开怎么办：</strong>若提示无权限或找不到应用，说明你还不在当前可用范围内。请联系 Jay 开通后再点一次按钮。也可以在飞书搜索 <strong>Meta 文档答疑员</strong>（仅对已开通成员可见）。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 能力 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>它能答什么</h2>
+      <p>范围锁定在 Meta WhatsApp Business Platform 官方文档树，凡是能落到某一篇官方页面的问题都在射程内。</p>
+    </div>
+    <div class="cards">
+      <div class="card"><h4>消息模板</h4><p>三大类别、审核规则、组件与参数、自动重分类、定价影响。</p></div>
+      <div class="card"><h4>账号与认证</h4><p>WABA 结构、企业验证 BV、官方商业账号 OBA、显示名审核。</p></div>
+      <div class="card"><h4>发送与限制</h4><p>消息量分级、客服窗口、自动扩容条件、模板消息适用场景。</p></div>
+      <div class="card"><h4>政策与申诉</h4><p>违规类型清单、限制阶梯、Request Review 申诉流程、支持渠道。</p></div>
+      <div class="card"><h4>Cloud API</h4><p>接口概念、访问令牌类型、Webhook 事件与字段说明。</p></div>
+      <div class="card"><h4>术语对照</h4><p>把「绿标」「企业认证」等业界叫法映射到官方英文术语再检索。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 工作流程 ============ -->
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>它怎么工作</h2>
+      <p>每条提问独立跑完一遍，没有一步可以跳过。</p>
+    </div>
+    <ol class="flow">
+      <li><span class="flow__n">1</span><div><h4>问题分类</h4><p>分成文档问题、方案咨询、无关内容三类。无法明确归类时按方案咨询转人工，不硬答。</p></div></li>
+      <li><span class="flow__n">2</span><div><h4>查本地 FAQ</h4><p>命中已验证问答先复用，但必须先确认出处链接仍然有效；链接失效或文档可能更新则重查。</p></div></li>
+      <li><span class="flow__n">3</span><div><h4>检索官方文档</h4><p>提取核心名词而非整句原话；中文无果时切换官方英文术语重搜。</p></div></li>
+      <li><span class="flow__n">4</span><div><h4>核验段落</h4><p>只采纳能正面回答问题的段落，链接最多深挖一层。中英文冲突时以英文原文为准。</p></div></li>
+      <li><span class="flow__n">5</span><div><h4>生成回答</h4><p>结论先行，每条论断附可核查链接，主动提示下一步会踩的坑；Meta 强制规则标注「此为 Meta 官方要求」。</p></div></li>
+      <li><span class="flow__n">6</span><div><h4>回填知识库</h4><p>把问题、结论与来源写回本地 FAQ；判定「未找到」的问题进入待补充清单。</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 边界 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>能力边界</h2>
+      <p>边界写死在 Agent 的岗位定义里，不是靠提示词临时约束。</p>
+    </div>
+    <div class="bounds">
+      <div class="bound bound--no">
+        <h3>它做不了</h3>
+        <ul>
+          <li>登录你的 Meta / WhatsApp 后台，查看某个具体账号状态</li>
+          <li>做方案选型建议（「适不适合我们」「该买哪一档」）</li>
+          <li>写代码、测试 API 接口功能</li>
+          <li>办理退款、赔偿、修改合同</li>
+          <li>把语音、图片、文件当作主问题来源</li>
+          <li>在没有官方文档依据时给出确定性结论</li>
+        </ul>
+      </div>
+      <div class="bound bound--human">
+        <h3>这些情况转人工</h3>
+        <ul>
+          <li>方案咨询、问题过于宽泛，或无法明确分类</li>
+          <li>「我的号为什么被限制」这类需查后台记录的个案</li>
+          <li>退款、投诉、要求服务商担责</li>
+          <li>与 Meta 开发者文档无关的内容</li>
+          <li>中英文都检索无果，判定「未在官方文档中找到」</li>
+          <li>用户表示没解决，重跑一轮后仍未解决</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>设计取向：</strong>宁可说「未找到」或「需转人工」，也不给一个没有出处的答案。上面第四个演示问题就是它拒绝承诺退款的真实回复。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 运行记录 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>真实运行记录</h2>
+      <p>取自 2026-08-15 当晚的实际运行日志，未做美化。</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>时间</th><th>提问</th><th>类型</th><th>耗时</th></tr></thead>
+        <tbody>
+          <tr><td>19:29</td><td>OBA 是什么，跟企业认证 BV 有什么关系</td><td><span class="tag">文档问题</span></td><td>106 秒</td></tr>
+          <tr><td>20:15</td><td>模板都有哪些类型</td><td><span class="tag">文档问题</span></td><td>61 秒</td></tr>
+          <tr><td>20:28</td><td>为什么老被封号，我该如何申诉</td><td><span class="tag tag--mix">文档 + 转人工</span></td><td>95 秒</td></tr>
+          <tr><td>20:31</td><td>你要给我退款，补偿我</td><td><span class="tag tag--human">转人工</span></td><td>11 秒</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 技术 ============ -->
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>怎么搭起来的</h2>
+      <p>使用者只需要飞书，不用装任何东西。</p>
+    </div>
+    <div class="cards cards--3">
+      <div class="card"><h4>Hermes Agent</h4><p>后台答疑引擎，承载岗位定义、检索核验流程与本地 FAQ 知识库。独立配置，与其他 Agent 不共用记忆。</p></div>
+      <div class="card"><h4>飞书机器人</h4><p>唯一使用入口。用户私聊提问，回复直达聊天窗口，只发最终答案，不打印中间过程。</p></div>
+      <div class="card"><h4>Codex / Cursor</h4><p>搭建阶段用于把岗位卡与工作流写成 Agent 定义、接入调试。日常答疑不经过它。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 声明 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="privacy">
+      <h2>关于本页</h2>
+      <ul>
+        <li><strong>纯静态展示。</strong>页面没有后端服务，也没有任何可调用的接口。</li>
+        <li><strong>不接模型 API。</strong>所有回答是真实会话的录制内容，点击即回放，不会产生任何调用。</li>
+        <li><strong>不含密钥与身份数据。</strong>页面内没有 API Key、App Secret、账号 ID、聊天 ID 或服务器地址。添加按钮使用飞书官方公开协议，不会调用本站接口。</li>
+        <li><strong>不收集访问者信息。</strong>无表单提交、无第三方统计脚本、无 Cookie。</li>
+        <li><strong>内容时效。</strong>Meta 官方文档会更新，页面内的结论以录制当时为准，实际以官方原文为准。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><strong>Meta 文档答疑员</strong> · 由 Jay 构建</p>
+    <p class="foot__cta"><a class="btn" href="https://applink.feishu.cn/client/bot/open?appId=cli_aa0a856b2939dcc2" target="_blank" rel="noopener">添加飞书机器人</a></p>
+    <p class="foot__small">展示内容录制于 2026-08-15。本页与 Meta Platforms, Inc. 无隶属关系，所有文档链接指向 Meta 官方站点。</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
