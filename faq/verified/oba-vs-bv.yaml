@@ -2,7 +2,7 @@ id: oba-vs-bv
 status: verified
 source: manual
 created_at: 2026-08-15
-verified_at: 2026-08-15
+verified_at: 2026-08-29
 verified_by: Jay
 
 question: "请告诉我 OBA 是什么，跟企业认证 BV 有什么关系"
@@ -23,29 +23,35 @@ keywords:
   - 对勾
   - business verification
 
-conclusion: "OBA 是 Official Business Account（官方商业账号）；BV（Business Verification）是企业真实性验证。BV 是申请 OBA 的资格前提之一，完成 BV 不会自动获得 OBA。"
+conclusion: "大家说的「绿标」，官方叫官方商业账号，名字旁边会有一个蓝色对勾。企业认证是先证明「公司是真的」；认证通过不会自动给绿标，还要再单独申请。"
 
 answer: |
-  **OBA 是 Official Business Account（官方商业账号）的缩写**，指由已通过 Meta 真实性验证的企业所拥有的 WhatsApp 商务电话号码；这类号码在联系人视图中，名称旁边会带一个**蓝色对勾（blue checkmark，官方英文原文如此，中文业界常叫「绿标」）**。它本质是 Meta 授予的展示性信任标识，不是使用 WhatsApp Business Platform 的前提。
+  **一句话：企业认证 = 证明公司是真的；绿标 = 额外申请的「官方号」信任标记。先认证，再申请绿标，认证完不会自动变绿标。**
 
-  BV（Business Verification，企业验证）则是 Meta 对企业真实、合法注册的资质审核。**两者关系一句话：BV 是 OBA 的资格前提之一——先做 BV，再单独申请 OBA；做完 BV 不会自动获得 OBA。**
+  ### 两个东西分别是啥
+  - **企业认证**：Meta 审核你的公司资质是不是真实、合法注册。
+  - **官方商业账号**（常被叫绿标 / OBA）：通过认证的企业，其 WhatsApp 商务号码名称旁可带 **蓝色对勾**。  
+    官方英文写的是 blue checkmark（蓝勾）；中文圈里很多人仍叫「绿标」。  
+    它是展示用的信任标识，**不是**你使用平台版的前提。
 
-  **官方文档来源：**
-  - [official-business-accounts](https://developers.facebook.com/documentation/business-messaging/whatsapp/official-business-accounts)
-  - [messaging-limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits)（完成 BV 后消息量从 250 提升到 2,000）
-  - [display-names](https://developers.facebook.com/documentation/business-messaging/whatsapp/display-names)
+  ### 申请绿标还要满足啥（官方要求）
+  - 已完成企业认证（硬性条件之一）
+  - 遵守商务消息政策
+  - 在平台注册满 30 天
+  - 号码开了两步验证
+  - 显示名已通过审核
 
-  **背景补充：** OBA 官方页面上，BV 被列为硬性资格条件之一（**此为 Meta 官方要求**）。要申请 OBA，官方列出的条件还包括：
-  - 遵守 WhatsApp Business Messaging Policy；
-  - 在 WhatsApp Business Platform 注册满 30 天；
-  - 该号码已启用两步验证；
-  - 该号码显示名已通过审核。
+  在 WhatsApp Manager 里：手机号 → 资料 → Official business account → 提交申请；也可以走官方状态接口。  
+  批不批由 Meta 决定；**被拒后要等 30 天才能再交。**
 
-  申请入口：WhatsApp Manager（手机号 → Profile → Official business account → Submit Request），或通过 Official Business Account Status API 提交。是否授予由 Meta 酌情决定，**被拒后须等 30 天才能重新提交**。
+  ### 官方说明
+  - [官方商业账号](https://developers.facebook.com/documentation/business-messaging/whatsapp/official-business-accounts)
+  - [消息量限制](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits)（完成企业认证后，起步额度常从 250 提到 2,000）
+  - [显示名](https://developers.facebook.com/documentation/business-messaging/whatsapp/display-names)
 
-  **容易踩的坑：**
-  - 非 OBA 号码**不会出现在 WhatsApp 应用内搜索结果**中（除非用户手动添加为联系人）。
-  - 已获 OBA 状态的号码要改显示名，需联系 direct support，不能走常规流程。
+  ### 容易踩的坑
+  - 没有绿标的号，一般**不会出现在 WhatsApp 应用内搜索**里（除非客户手动存了你）。
+  - 已经是绿标的号要改显示名，通常要走官方直接支持，不能当普通改名。
 
 sources:
   - title: "official-business-accounts"
@@ -61,6 +67,9 @@ sources:
 scope: doc_question
 handoff_note: ""
 
+corpus: meta_developer_docs
+product: business_platform
+
 aliases:
   绿标: "blue checkmark (Official Business Account)"
   蓝标: "blue checkmark (Official Business Account)"
@@ -68,7 +77,7 @@ aliases:
   OBA: "Official Business Account"
 
 related_ids: []
-notes: "整理自 2026-08-15 飞书真实会话。曾修正旧结论「绿色对勾」为官方原文 blue checkmark；与展示页 data.js id=oba 对齐。"
+notes: "已按通俗表达规范改写。保留 blue checkmark 纠正说明；对齐展示页 data.js id=oba。"
 
 meta:
   at: "19:29"

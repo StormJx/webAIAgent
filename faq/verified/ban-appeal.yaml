@@ -2,7 +2,7 @@ id: ban-appeal
 status: verified
 source: manual
 created_at: 2026-08-15
-verified_at: 2026-08-15
+verified_at: 2026-08-29
 verified_by: Jay
 
 question: "为什么老被封号，我新创建的账号怎么就会被封号限制，我该如何申诉"
@@ -22,35 +22,39 @@ keywords:
   - 下架
   - Request Review
 
-conclusion: "官方文档可以说明「账号为何会被限制」的机制和「如何申诉」的流程；无法替你判断「为什么是我的号被封」（需查 Business Support Home 个案记录，须转人工）。"
+conclusion: "官方能讲清「一般为什么会被限制」和「后台怎么点申诉」；但讲不清「为什么偏偏是你的号」——那要看你账号里的违规记录，需要人工查。新号和老号规则一样，不是因为新才封。"
 
 answer: |
-  **先说结论：官方文档无法替你判断「为什么是我的账号被封」（这需要结合你账号在 Business Support Home 里的具体违规记录诊断，属于个案，需人工处理）；但「账号为什么会被限制」的官方机制和「如何申诉」的完整流程，官方文档都有明确说明。**
+  **先分清：下面说的是平台版（接系统 / 商业账户后台）的封禁，不是手机商务版 App 里那套按钮。**
 
-  **官方文档来源：**
-  - [policy-enforcement](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement)
-  - [policy-enforcement-violations](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement-violations)
-  - [support](https://developers.facebook.com/documentation/business-messaging/whatsapp/support)
+  **一句话：规则和申诉步骤可以按文档讲；「你这个号到底踩了哪条」我看不到后台，要转人工。**
 
-  **一、账号为什么会被限制（官方机制，此为 Meta 官方要求）：**
+  ### 一般为什么会被限制（官方机制）
+  反复违反商务消息政策、电商政策或商业条款时，处罚会一级级加重，例如：
+  1. 先警告；
+  2. 再犯（滥发、模板类目乱标、高风险品类等）→ 短则禁发模板几天，再重则禁发所有消息，直至**锁号**（只能靠申诉）、多次不改可能永久停用；
+  3. 严重危害用户的行为 → 可能直接下架；
+  4. 用户投诉太多，也可能被限制或下架。
 
-  WhatsApp 会对**反复违反** WhatsApp Business Messaging Policy、Commerce Policy 或 Business Terms of Service 的账号执行强制措施，限制是阶梯式加重的：
+  ### 怎么在后台申诉
+  1. 登录 Meta 商业套件 / 商务管理平台，打开 **商业支持主页（Business Support Home）**。
+  2. 选中相关的 WhatsApp 商业账户。
+  3. 在违规列表里点对应项 → **申请复核（Request Review）**。
+  4. 按提示补充证据后提交。
 
-  1. 首次违规 → 警告（说明违反的政策）
-  2. 反复违规（发送 spam、模板错误分类、涉及高风险品类）→ 逐级加重：1 或 3 天禁发模板消息 → 5／7／30 天禁发任何消息 → **账号锁定**（无限期，只能申诉解除）→ 多次不改正则永久停用
-  3. 严重危害用户（儿童剥削、诈骗、恐怖主义、非法毒品）→ 直接下架
-  4. 收到**过多用户负面反馈**也可能被限制或下架
+  补充：被限制或停用后往往仍可申诉；但官方写明，**不是所有垃圾信息类违规都能申诉**，有的要等限制期过完。
 
-  **二、怎么申诉（官方流程）：**
+  ### 「新号怎么就被封」
+  - 新号也走同一套规则，看的是**有没有违规行为**，不是「号太新」。
+  - **你号上的具体原因**，必须到商业支持主页看违规记录才能定，文档答疑员看不到，请转人工。
 
-  1. 登录 Meta Business Suite 或 Business Manager，进入 **Business Support Home**
-  2. 选择相关的 WhatsApp Business Account
-  3. 从违规列表中选择对应违规项，点击 **Request Review**
-  4. 在弹出的对话框中填写支持证据，提交
+  ### 官方说明
+  - [政策怎么执行](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement)
+  - [违规类型](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement-violations)
+  - [支持与申诉入口](https://developers.facebook.com/documentation/business-messaging/whatsapp/support)
 
-  补充：被限制或停用的账号仍可申诉；**并非所有 spam 违规都能申诉**（官方原文明确），有些需要等到限制期结束。
-
-  **三、关于「新账号怎么就被限制了」：** 新账号同样适用上述机制，限制来自「违规内容／行为」而非「账号年龄」。但**你账号的具体触发原因必须人工查看 Business Support Home 里的违规记录才能确定**，这超出文档能回答的范围，建议联系人工处理。
+  ### 若你用的是手机商务版 App
+  - 申诉入口在 App 里的「申请复核」，见另一条 FAQ，不要和上面后台步骤混用。
 
 sources:
   - title: "policy-enforcement"
@@ -64,14 +68,18 @@ sources:
     verified_at: 2026-08-15
 
 scope: mixed
-handoff_note: "政策机制与申诉流程可答；「我的号为何被封」等个案原因必须转人工，不得猜测具体违规原因。"
+handoff_note: "政策机制与申诉步骤可答；「我的号为何被封」等个案必须转人工，不得猜原因。"
+
+corpus: meta_developer_docs
+product: business_platform
 
 aliases:
   申诉: "Request Review (Business Support Home)"
 
 related_ids:
   - refund-handoff
-notes: "整理自 2026-08-15 飞书真实会话；与展示页 data.js id=ban 对齐。"
+  - business-app-account-ban
+notes: "已按通俗表达规范改写。仅覆盖 Platform；App 见 business-app-account-ban。对齐展示页 data.js id=ban。"
 
 meta:
   at: "20:28"

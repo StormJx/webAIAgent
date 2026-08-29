@@ -1,0 +1,66 @@
+id: business-app-vs-platform
+status: verified
+source: manual
+created_at: 2026-08-29
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "WhatsApp Business 应用和 Business Platform 有什么区别"
+question_patterns:
+  - "WhatsApp Business 应用和 Business Platform 有什么区别"
+  - "商务 App 和 API 有什么不一样"
+  - "我该用 Business 应用还是 Platform"
+  - "Cloud API 和 WhatsApp 商务版是不是一回事"
+  - "手机商务版和平台版有啥区别"
+keywords:
+  - Business 应用
+  - Business app
+  - Business Platform
+  - Cloud API
+  - BSP
+  - 商务版
+  - API
+  - 平台版
+
+conclusion: "手机里免费下的「WhatsApp 商务版 App」，和需要接系统/发模板消息的「平台版」，不是同一个东西。日常点按钮、建目录、群发，多半是 App；对接系统和大批量模板，才是平台版。"
+
+answer: |
+  **一句话：你手机上那个绿色的商务版 App，和常说的「接口 / 平台版」，是两套产品。**
+
+  ### 你可以这样理解
+  - **商务版 App**：像「升级版微信商家号」——免费下载，在自己手机上跟客户聊天，还能做商品目录、给客户打标签、群发、设置离开时自动回复。
+  - **平台版（也叫接口版）**：给要**接自己系统、多人客服、大批量按模板发消息**的商家用，一般要通过服务商或技术对接，不是再下一个 App 就完事。
+
+  ### 你问的问题，该看哪边说明
+  - 问「目录怎么加、群发怎么发、离开消息怎么开」→ 看 **WhatsApp 帮助中心**（商务版 App）：[产品说明](https://faq.whatsapp.com/1060909311260819)
+  - 问「消息模板分几种、企业认证、官方号、接口怎么接」→ 看 **Meta 开发者文档**（平台版）
+
+  ### 别搞混
+  - App 里的「群发列表」≠ 平台版的「模板群发」
+  - App 被封和平台版被封，**申诉入口也不一样**（详见对应 FAQ）
+
+  > 这里只帮你分清「是哪个产品、该查哪类官方说明」，不替你决定该用哪一种。
+
+sources:
+  - title: "About WhatsApp Business products"
+    url: "https://faq.whatsapp.com/1060909311260819"
+    verified_at: 2026-08-29
+
+scope: doc_question
+handoff_note: ""
+
+corpus: whatsapp_help
+product: business_app
+
+aliases:
+  商务版: "WhatsApp Business app"
+  平台版: "WhatsApp Business Platform"
+  API: "WhatsApp Business Platform"
+  Cloud API: "WhatsApp Business Platform"
+
+related_ids:
+  - business-app-catalog
+  - business-app-broadcast
+  - ban-appeal
+  - business-app-account-ban
+notes: "已按通俗表达规范改写。不做方案选型建议。"

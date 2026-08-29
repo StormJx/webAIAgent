@@ -22,6 +22,8 @@
 | `answer` | string (Markdown) | 完整回答正文。必须含官方链接；禁止无出处的确定性断言。 |
 | `sources` | object[] | 官方文档来源列表，见下方结构。至少 1 条（`handoff` 纯转人工条目可为空数组，但须在 `handoff_note` 说明）。 |
 | `scope` | enum | `doc_question` / `mixed` / `handoff`。 |
+| `corpus` | enum | 知识来源库：`meta_developer_docs` 或 `whatsapp_help`。决定优先去哪一类官方站核验。 |
+| `product` | enum | 产品层：`consumer` / `business_app` / `business_platform`。回答前必须分清，避免 App 与 Platform 混答。 |
 
 ## 推荐字段
 
@@ -69,6 +71,26 @@ sources:
 | `manual` | 人工按本规范写入 |
 | `auto` | Agent 答完后回填 |
 
+## 语料库枚举（`corpus`）
+
+| 值 | 官方站点 | 典型内容 |
+|----|----------|----------|
+| `meta_developer_docs` | `developers.facebook.com/documentation/.../whatsapp/` | 模板类别、WABA、OBA、Cloud API、Platform 政策申诉 |
+| `whatsapp_help` | `faq.whatsapp.com` | Business 应用操作：目录、标签、广播、离开消息、快捷回复等 |
+
+**不要**把 Help Center 的操作步骤与开发者文档的 API/政策机制混在同一条结论里而不加区分。  
+当前范围：**不收录**个人版隐私/安全类帮助（加密、Privacy checkup 等），除非岗位定义另行放开。
+
+## 产品层枚举（`product`）
+
+| 值 | 含义 |
+|----|------|
+| `consumer` | 个人版 WhatsApp（当前默认不收录） |
+| `business_app` | 免费 WhatsApp Business 应用 |
+| `business_platform` | WhatsApp Business Platform（Cloud API / BSP） |
+
+同一主题（如「封号」）在 `business_app` 与 `business_platform` 下申诉入口不同，必须分成不同 `id` 的条目。
+
 ## 目录约定
 
 ```
@@ -93,5 +115,9 @@ faq/
 - [ ] `conclusion` 与 `answer` 一致，结论先行
 - [ ] 每条论断有对应 `sources` 链接（`handoff` 除外）
 - [ ] 所有 `sources[].url` 已点开确认有效，`verified_at` 为今日或近日
+- [ ] `corpus` / `product` 已填写，且与 `sources` 域名一致（Help → `faq.whatsapp.com`；开发者文档 → `developers.facebook.com`）
 - [ ] `scope` / `handoff_note` 与能力边界一致（不承诺退款、不诊断个案账号）
 - [ ] 正文无 API Key、账号 ID、chat_id、内部路径等敏感信息
+- [ ] 未把 App 功能写成 Platform 能力，也未写入未在官文确认的数字/步骤
+- [ ] `conclusion` 口语可读：不懂 API 的人也能懂大意
+- [ ] `answer` 遵循「结论 → 是啥 → 怎么做 → 链接 → 坑」；前 3 行无缩写堆砌

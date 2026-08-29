@@ -52,7 +52,43 @@
 - **问法不够**：只有标准问、没有口语（如「绿标」「老被封号」）→ Agent 命不中  
 - **只有结论、没有官方链接** → 不得标 `verified`  
 - **该转人工的边界没写**（个案封号原因、退款）→ 写成 `scope: mixed` 或 `handoff` 并填 `handoff_note`  
-- **敏感信息**：账号 ID、chat_id、内部路径、密钥 → 一律删除  
+- **敏感信息**：账号 ID、chat_id、内部路径、密钥 → 一律删除
+- **太专业**：结论像文档摘要、缩写堆砌 → 按 §3.1 改成口语结论 + 步骤，详见通俗表达规范  
+
+---
+
+## 3.1 通俗表达规范（必遵）
+
+读者默认是**不会翻英文文档的商家/运营**，不是开发者。专业准确靠官方链接保证；正文先让人听懂。
+
+### 结构（按这个顺序写 `answer`）
+
+1. **一句话结论**（同 `conclusion`，口语，可单独转发）
+2. **这是啥 / 跟你有啥关系**（用生活场景，不堆术语）
+3. **怎么做**（能写步骤就写「打开 → 点哪里 → 填什么」）
+4. **官方出处**（链接放后段，不要一上来丢英文标题）
+5. **容易踩的坑**（只写真会踩的，不写术语辨析秀）
+
+### 用词
+
+| 少写 | 改成 |
+|------|------|
+| Broadcast lists | 群发列表（广播） |
+| Catalog | 商品目录 |
+| Away message | 离开时的自动回复 |
+| Business Platform / Cloud API | 平台版 / 接口版（需要对接系统的那种） |
+| WABA / BSP / OBA | 首次出现用中文解释，英文缩写放括号里，或放到后文 |
+
+- 第一段尽量**零缩写**；全文同一概念只用一种叫法。
+- 菜单名可保留英文，但前面加中文：点 **Tools（工具）→ Away message（离开消息）**。
+- 不要把「产品定位原文」整段翻译体堆给用户；先说人话，细节链到官方页。
+
+### 自检（标 `verified` 前问自己）
+
+- [ ] 只读 `conclusion`，不懂 WhatsApp 的人能否大致明白？
+- [ ] 正文前 3 行有没有三个以上英文缩写？有则重写。
+- [ ] 操作类问题有没有「点哪里」的步骤？
+- [ ] 有没有在教人「该买 App 还是 API」？（禁止；只说明差别与文档入口）
 
 ---
 
@@ -128,11 +164,29 @@ Agent 答完一轮后回填时，应写入与本 Schema 相同的字段，并满
 
 ## 9. 现有条目
 
-| id | 主题 | scope | source |
+### Platform / 开发者文档（`corpus: meta_developer_docs`）
+
+| id | 主题 | scope | status |
 |----|------|-------|--------|
 | `template-categories` | 消息模板三大类别 | doc_question | verified |
 | `oba-vs-bv` | OBA 与企业认证 BV | doc_question | verified |
-| `ban-appeal` | 封号机制与申诉（含转人工） | mixed | verified |
+| `ban-appeal` | Platform 封号机制与申诉（含转人工） | mixed | verified |
 | `refund-handoff` | 退款/补偿诉求 | handoff | verified |
 
 以上四条整理自 2026-08-15 飞书真实会话，并与展示页回放对齐。
+
+### Business 应用 / Help Center（`corpus: whatsapp_help`）
+
+| id | 主题 | scope | status |
+|----|------|-------|--------|
+| `business-app-vs-platform` | Business 应用 vs Platform | doc_question | verified |
+| `business-app-catalog` | 商品目录 Catalog | doc_question | verified |
+| `business-app-labels` | 标签 Labels / 列表 Lists | doc_question | verified |
+| `business-app-broadcast` | 广播列表 Broadcast | doc_question | verified |
+| `business-app-away-message` | 离开消息 Away | doc_question | verified |
+| `business-app-quick-replies` | 快捷回复 Quick replies | doc_question | verified |
+| `business-app-account-ban` | Business 应用封号复核 | mixed | verified |
+
+**不收录：** 个人版隐私/安全类帮助（加密、Privacy checkup 等）。
+
+封号类务必先分清 `product`：`business-app-account-ban`（App）与 `ban-appeal`（Platform）不可混用。

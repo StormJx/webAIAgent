@@ -1,0 +1,64 @@
+id: business-app-away-message
+status: verified
+source: manual
+created_at: 2026-08-29
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "WhatsApp Business 应用离开消息怎么设置"
+question_patterns:
+  - "WhatsApp Business 应用离开消息怎么设置"
+  - "Away message 怎么开"
+  - "下班自动回复怎么弄"
+  - "不在时怎么自动回客户"
+  - "休息时自动回一句"
+keywords:
+  - 离开消息
+  - away message
+  - 自动回复
+  - 下班回复
+  - business hours
+
+conclusion: "离开消息 = 你不在时自动回客户一句「现在忙，稍后再回」。在工具里打开开关，自己写文案，还能选「一直发 / 按时间表 / 仅下班后」，以及发给哪些人。手机要联网才会发出去。"
+
+answer: |
+  **一句话：下班或不在时，让 WhatsApp 自动回一句，避免客户以为你不理人。**
+
+  ### 怎么开
+  1. 打开底部 **工具（Tools）** → **离开消息（Away message）**。
+  2. 打开 **发送离开消息（Send away message）**。
+  3. 改好自动回复的文案。
+  4. 选 **什么时候发（Schedule）**：
+     - 一直发；
+     - 按你设的时间段发；
+     - 只在营业时间外发（要先在商业资料里填好营业时间）。
+  5. 选 **发给谁（Recipients）**：所有人、只发给通讯录外的人、排除某些人、或只发给指定联系人。
+  6. 点 **保存（Save）**。
+
+  ### 注意
+  - 手机必须 **连着网**，离开消息才会发出去。
+  - 这和「第一次打招呼的欢迎语」不是同一功能；欢迎语要另查帮助。
+
+  ### 官方说明
+  - [离开消息怎么用](https://faq.whatsapp.com/2565868990219715)
+
+sources:
+  - title: "How to use away messages"
+    url: "https://faq.whatsapp.com/2565868990219715"
+    verified_at: 2026-08-29
+
+scope: doc_question
+handoff_note: ""
+
+corpus: whatsapp_help
+product: business_app
+
+aliases:
+  自动回复: "Away message"
+  离开消息: "Away message"
+  下班回复: "Away message"
+
+related_ids:
+  - business-app-quick-replies
+  - business-app-vs-platform
+notes: "已按通俗表达规范改写。问候语未单独立条。"

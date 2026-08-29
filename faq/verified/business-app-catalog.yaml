@@ -1,0 +1,72 @@
+id: business-app-catalog
+status: verified
+source: manual
+created_at: 2026-08-29
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "WhatsApp Business 应用里怎么创建和维护商品目录"
+question_patterns:
+  - "WhatsApp Business 应用里怎么创建和维护商品目录"
+  - "目录 Catalog 怎么加商品"
+  - "怎么在 WhatsApp 里展示产品"
+  - "商品目录怎么隐藏或分组"
+  - "怎么做产品橱窗"
+keywords:
+  - 目录
+  - catalog
+  - 商品
+  - 产品目录
+  - collection
+  - 集合
+  - 橱窗
+
+conclusion: "商务版 App 可以建一个「商品目录」，把产品图片、名称、价格等放进去给客户看。加进去之后要等 WhatsApp 审核通过，客户才能看见；也可以分类、隐藏暂时不卖的。"
+
+answer: |
+  **一句话：商品目录 = 你在 WhatsApp 里的小橱窗，客户能直接浏览你卖什么。**
+
+  ### 这是啥
+  - 只在**手机商务版 App**里用（不是接系统的平台版专用流程）。
+  - 你可以上传产品/服务的图片，写名称、价格、简介，还能放网站链接。
+
+  ### 怎么加一件商品
+  （手机和电脑菜单文字可能略有不同，以你屏幕为准。）
+  1. 打开 **目录（Catalog）**。
+  2. 点 **添加新项目（Add new item）**。
+  3. 上传图片。
+  4. 填写名称；按提示选好 **原产国（Country of origin）** 等必填项。
+  5. 价格、促销价、描述、链接、货号等能填就填。
+  6. 点保存 / **添加到目录**。
+
+  ### 客户什么时候能看见
+  - 新加的商品要先过 WhatsApp **审核**，通过后客户才看得到。
+  - 审核中或被拒的，客户看不到；被拒时旁边常有红色感叹号。
+  - 暂时不想卖的，可以按帮助页说明**隐藏**，以后再取消隐藏。
+  - 商品多了，可以用 **集合（Collections）** 分成「鞋类」「配件」这样的分组，方便客户找。
+
+  ### 官方说明
+  - [怎么创建和维护目录](https://faq.whatsapp.com/833697274483076)
+
+  ### 别搞混
+  - 如果你是把 Meta 后台里已有的大目录「连」到 WhatsApp，流程和上面「在 App 里手动加」不一样，要另看对应帮助，不要硬套。
+
+sources:
+  - title: "How to create and maintain a catalog"
+    url: "https://faq.whatsapp.com/833697274483076"
+    verified_at: 2026-08-29
+
+scope: doc_question
+handoff_note: ""
+
+corpus: whatsapp_help
+product: business_app
+
+aliases:
+  商品目录: "Catalog"
+  橱窗: "Catalog"
+  集合: "Collections"
+
+related_ids:
+  - business-app-vs-platform
+notes: "已按通俗表达规范改写。步骤因端而异；未写未经官文确认的数量上限。"

@@ -2,7 +2,7 @@ id: template-categories
 status: verified
 source: manual
 created_at: 2026-08-15
-verified_at: 2026-08-15
+verified_at: 2026-08-29
 verified_by: Jay
 
 question: "模板都有哪些类型"
@@ -11,6 +11,7 @@ question_patterns:
   - "消息模板分几类"
   - "WhatsApp 模板有哪几种"
   - "marketing utility authentication 是什么"
+  - "营销模板和实用模板有啥区别"
 keywords:
   - 模板
   - template
@@ -21,26 +22,31 @@ keywords:
   - 认证模板
   - 实用模板
 
-conclusion: "WhatsApp 消息模板按类别（category）分为三种：marketing（营销）、utility（实用）、authentication（认证）；创建时必须归入其中一类。"
+conclusion: "平台版发「模板消息」时，官方只认三大类：营销、实用、验证码。建模板时必须选一类；选错会影响能不能过审，也会影响收费。"
 
 answer: |
-  **WhatsApp 消息模板按类别（category）分为三种类型：marketing（营销）、utility（实用）、authentication（认证）。** 官方规定每个模板创建时必须归入其中一类。
+  **一句话：模板就三种——促销用的、办事通知用的、发验证码用的。建的时候必须选对。**
 
-  **官方文档来源：**
-  - [templates/overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview)
-  - [template-categorization](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization)
-  - [authentication-templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/authentication-templates)
-  - [utility-templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/utility-templates/utility-templates)
+  ### 三种分别干什么
+  1. **营销（Marketing）**  
+     推活动、优惠、拉新、提醒客户别忘了你。最灵活。  
+     注意：一条消息里既有「订单更新」又夹带促销，或内容说不清，官方也会算成营销。
+  2. **实用（Utility）**  
+     多半是客户先有动作之后才发：下单确认、物流、账户提醒、安全提醒等。  
+     硬规矩：**不能带促销**；内容要跟订单／账户／交易相关，或对用户是必要的。
+  3. **认证（Authentication）**  
+     **只有这类能发验证码 / 一次性密码**（官方要求）。限制最严：固定话术，一般不能塞链接、图片、表情，可变内容也很短。
 
-  **三种类型速览：**
-  1. **Marketing（营销）模板** — 最灵活的一类，用于品牌认知、促销优惠、再营销、App 推广、客户关系维护等。官方规定：混合内容（比如「订单更新 + 促销」）、内容不清晰的模板，也会被归为 marketing。
-  2. **Utility（实用）模板** — 通常由用户动作触发，如订单确认／物流更新、账户提醒、反馈调查等。判定标准是：**必须非促销**，且**与用户订单／账户／交易相关，或对用户必需**（如安全提醒）。
-  3. **Authentication（认证）模板** — 唯一可以发送一次性密码（OTP）／验证码的模板类型（**此为 Meta 官方要求**）。限制最严：固定预设文本、不允许 URL／媒体／表情符号、参数不超过 15 个字符。
+  ### 官方说明
+  - [模板总览](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview)
+  - [怎么分类](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization)
+  - [认证模板](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/authentication-templates)
+  - [实用模板](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/utility-templates/utility-templates)
 
-  **容易踩的坑：**
-  - **类别影响定价**：三类模板计费费率不同，分类直接关系到成本。
-  - **会被自动改分类**：如果在 utility 模板里塞营销内容，系统会自动重新归为 marketing（**此为 Meta 官方要求**）。自 2025-04-09 起，提交为 UTILITY 但被判定应为 MARKETING 的模板将直接按 MARKETING 批准，60 天内可申请复核。
-  - **不要混淆概念**：模板的「组件类型」（header／body／footer／button）和「参数格式」（named／positional）是另一层维度，不是模板类别。
+  ### 容易踩的坑
+  - **类别不同，价钱不同**——选错可能更贵。
+  - **实用模板里塞促销，系统可能直接改成营销**（官方要求）。自 2025-04-09 起，你交的是实用、系统认为该是营销时，可能直接按营销通过，60 天内可申请复核。
+  - 标题、正文、按钮这些「零件」，和「营销/实用/认证」不是一回事，别混着问。
 
 sources:
   - title: "templates/overview"
@@ -59,9 +65,16 @@ sources:
 scope: doc_question
 handoff_note: ""
 
-aliases: {}
+corpus: meta_developer_docs
+product: business_platform
+
+aliases:
+  营销模板: "Marketing template"
+  实用模板: "Utility template"
+  认证模板: "Authentication template"
+
 related_ids: []
-notes: "整理自 2026-08-15 飞书真实会话；与展示页 data.js id=templates 对齐。"
+notes: "已按通俗表达规范改写。内容对齐 2026-08-15 会话与展示页 data.js id=templates。"
 
 meta:
   at: "20:15"

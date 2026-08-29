@@ -39,6 +39,9 @@ sources:
 scope: doc_question              # doc_question | mixed | handoff
 handoff_note: ""                 # mixed / handoff 时必填
 
+corpus: whatsapp_help            # meta_developer_docs | whatsapp_help
+product: business_app            # consumer | business_app | business_platform
+
 aliases:
   # 业界叫法: "官方英文术语（全称）"
   # 绿标: "blue checkmark (Official Business Account)"

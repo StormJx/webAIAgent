@@ -1,0 +1,72 @@
+id: business-app-labels
+status: verified
+source: manual
+created_at: 2026-08-29
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "WhatsApp Business 应用里标签 Labels 怎么用"
+question_patterns:
+  - "WhatsApp Business 应用里标签怎么用"
+  - "Labels 是什么"
+  - "怎么给客户打标签"
+  - "标签和列表 Lists 有什么关系"
+  - "怎么给客户分类"
+keywords:
+  - 标签
+  - labels
+  - lists
+  - 列表
+  - 客户分类
+
+conclusion: "标签就是给聊天贴便签，方便你按「新客 / 待付款 / 已成交」快速筛选。官方正在把「标签」逐步改成「列表」，用法差不多。最多可建 20 个；也可以按标签给这批人发群发。"
+
+answer: |
+  **一句话：标签 = 给客户聊天贴颜色便签，方便你一眼找到该跟进谁。**
+
+  ### 先注意
+  - 官方正在把 **标签（Labels）** 改成 **列表（Lists）**，有的手机已经变了。
+  - 名字变了，主意一样：先给聊天归类，再筛选或群发。
+  - 若你界面已是「列表」，看 [列表怎么用](https://faq.whatsapp.com/1102928584767164)；下面按标签帮助说明。
+
+  ### 能干什么
+  - 给整段聊天贴上名字/颜色，例如「新询盘」「已下单」。
+  - 最多 **20 个**标签（官方原文）。
+  - 点进某个标签，可以 **给这批客户发消息（Message customers）** 做群发（只能发给个人，不能发给群）。
+
+  ### 怎么操作（以手机为准）
+  - **新建**：在聊天相关入口进标签管理 → 起名 → 保存。
+  - **打标**：长按某条聊天 → 选标签 → 保存。
+  - **查找**：在标签列表里点某个标签，只看这类聊天。
+
+  ### 官方说明
+  - [标签怎么用](https://faq.whatsapp.com/3398508707096369)
+  - [列表怎么用](https://faq.whatsapp.com/1102928584767164)
+
+  ### 容易踩的坑
+  - 这是商务版 App 自己的整理工具，不是公司 CRM 里的客户字段。
+  - 按标签群发时，对方仍须满足群发条件（常见是对方通讯录存了你的号），详见群发 FAQ。
+
+sources:
+  - title: "How to use labels"
+    url: "https://faq.whatsapp.com/3398508707096369"
+    verified_at: 2026-08-29
+  - title: "How to use lists"
+    url: "https://faq.whatsapp.com/1102928584767164"
+    verified_at: 2026-08-29
+
+scope: doc_question
+handoff_note: ""
+
+corpus: whatsapp_help
+product: business_app
+
+aliases:
+  标签: "Labels"
+  列表: "Lists"
+  客户分类: "Labels / Lists"
+
+related_ids:
+  - business-app-broadcast
+  - business-app-vs-platform
+notes: "已按通俗表达规范改写。Labels→Lists 迁移中。"
