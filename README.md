@@ -63,3 +63,8 @@ vercel --prod     # 部署并输出公开链接
 - 改完执行 `vercel --prod` 重新发布
 
 **注意：** 往 `faq/` 或 `data.js` 里加内容时，先确认不含账号 ID、聊天 ID、内部路径或任何凭证。
+
+## Hermes / 飞书机器人（本地机密）
+
+飞书答疑机器人由本机 Hermes 运行，配置在 `~/.hermes/`，**不在**本静态站仓库的业务代码里。  
+如何把配置安全镜像到 `local/hermes/`（且永不进 GitHub）：见 [`docs/hermes-runtime.md`](docs/hermes-runtime.md)。

@@ -1,3 +1,12 @@
+# 本地机密与运行时镜像（严禁提交）
+local/
+local/hermes/
+.local-secrets/
+**/.env
+**/auth.json
+**/gateway.log
+**/errors.log
+
+# 既有
 .vercel
 .DS_Store
-
