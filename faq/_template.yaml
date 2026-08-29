@@ -1,0 +1,56 @@
+# 复制本文件为 faq/verified/<id>.yaml 或 faq/pending/<id>.yaml 后填写。
+# 字段说明见 faq/SCHEMA.md；维护流程见 faq/README.md。
+
+id: example-topic-slug
+status: draft                    # draft | verified | stale | archived
+source: manual                   # manual | auto
+created_at: 2026-08-29
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "标准问法写在这里"
+question_patterns:
+  - "标准问法写在这里"
+  - "用户可能怎么口语化提问"
+keywords:
+  - 中文关键词
+  - english-term
+
+conclusion: "一句话结论，必须能被官方文档支撑。"
+
+answer: |
+  **一句话结论复述或略展开。**
+
+  **官方文档来源：**
+  - [文档短标题](https://developers.facebook.com/...)
+
+  **要点：**
+  1. …
+  2. …
+
+  **容易踩的坑：**
+  - …
+
+sources:
+  - title: "docs-path-or-short-title"
+    url: "https://developers.facebook.com/documentation/..."
+    verified_at: 2026-08-29
+
+scope: doc_question              # doc_question | mixed | handoff
+handoff_note: ""                 # mixed / handoff 时必填
+
+aliases:
+  # 业界叫法: "官方英文术语（全称）"
+  # 绿标: "blue checkmark (Official Business Account)"
+
+related_ids: []
+notes: ""
+
+# 可选：运行 / 展示元数据
+# meta:
+#   at: "20:15"
+#   cost: "61 秒"
+#   calls: 8
+# steps:
+#   - "判定为文档问题，进入检索流程"
+# tone: handoff

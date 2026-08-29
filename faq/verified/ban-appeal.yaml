@@ -1,0 +1,85 @@
+id: ban-appeal
+status: verified
+source: manual
+created_at: 2026-08-15
+verified_at: 2026-08-15
+verified_by: Jay
+
+question: "为什么老被封号，我新创建的账号怎么就会被封号限制，我该如何申诉"
+question_patterns:
+  - "为什么老被封号，我该如何申诉"
+  - "账号被限制了怎么申诉"
+  - "新账号为什么会被封"
+  - "Request Review 怎么弄"
+  - "违规了怎么恢复"
+keywords:
+  - 封号
+  - 申诉
+  - 限制
+  - 违规
+  - policy
+  - review
+  - 下架
+  - Request Review
+
+conclusion: "官方文档可以说明「账号为何会被限制」的机制和「如何申诉」的流程；无法替你判断「为什么是我的号被封」（需查 Business Support Home 个案记录，须转人工）。"
+
+answer: |
+  **先说结论：官方文档无法替你判断「为什么是我的账号被封」（这需要结合你账号在 Business Support Home 里的具体违规记录诊断，属于个案，需人工处理）；但「账号为什么会被限制」的官方机制和「如何申诉」的完整流程，官方文档都有明确说明。**
+
+  **官方文档来源：**
+  - [policy-enforcement](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement)
+  - [policy-enforcement-violations](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement-violations)
+  - [support](https://developers.facebook.com/documentation/business-messaging/whatsapp/support)
+
+  **一、账号为什么会被限制（官方机制，此为 Meta 官方要求）：**
+
+  WhatsApp 会对**反复违反** WhatsApp Business Messaging Policy、Commerce Policy 或 Business Terms of Service 的账号执行强制措施，限制是阶梯式加重的：
+
+  1. 首次违规 → 警告（说明违反的政策）
+  2. 反复违规（发送 spam、模板错误分类、涉及高风险品类）→ 逐级加重：1 或 3 天禁发模板消息 → 5／7／30 天禁发任何消息 → **账号锁定**（无限期，只能申诉解除）→ 多次不改正则永久停用
+  3. 严重危害用户（儿童剥削、诈骗、恐怖主义、非法毒品）→ 直接下架
+  4. 收到**过多用户负面反馈**也可能被限制或下架
+
+  **二、怎么申诉（官方流程）：**
+
+  1. 登录 Meta Business Suite 或 Business Manager，进入 **Business Support Home**
+  2. 选择相关的 WhatsApp Business Account
+  3. 从违规列表中选择对应违规项，点击 **Request Review**
+  4. 在弹出的对话框中填写支持证据，提交
+
+  补充：被限制或停用的账号仍可申诉；**并非所有 spam 违规都能申诉**（官方原文明确），有些需要等到限制期结束。
+
+  **三、关于「新账号怎么就被限制了」：** 新账号同样适用上述机制，限制来自「违规内容／行为」而非「账号年龄」。但**你账号的具体触发原因必须人工查看 Business Support Home 里的违规记录才能确定**，这超出文档能回答的范围，建议联系人工处理。
+
+sources:
+  - title: "policy-enforcement"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement"
+    verified_at: 2026-08-15
+  - title: "policy-enforcement-violations"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement-violations"
+    verified_at: 2026-08-15
+  - title: "support"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/support"
+    verified_at: 2026-08-15
+
+scope: mixed
+handoff_note: "政策机制与申诉流程可答；「我的号为何被封」等个案原因必须转人工，不得猜测具体违规原因。"
+
+aliases:
+  申诉: "Request Review (Business Support Home)"
+
+related_ids:
+  - refund-handoff
+notes: "整理自 2026-08-15 飞书真实会话；与展示页 data.js id=ban 对齐。"
+
+meta:
+  at: "20:28"
+  cost: "95 秒"
+  calls: 10
+steps:
+  - "拆分问题：政策机制可答，个案原因需转人工"
+  - "抓取 policy-enforcement 政策执行页"
+  - "核验 policy-enforcement-violations 违规类型清单"
+  - "核验 support 页确认官方申诉入口"
+  - "结论分层输出：可答部分给文档，个案部分标注转人工"

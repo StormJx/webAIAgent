@@ -1,0 +1,75 @@
+id: template-categories
+status: verified
+source: manual
+created_at: 2026-08-15
+verified_at: 2026-08-15
+verified_by: Jay
+
+question: "模板都有哪些类型"
+question_patterns:
+  - "模板都有哪些类型"
+  - "消息模板分几类"
+  - "WhatsApp 模板有哪几种"
+  - "marketing utility authentication 是什么"
+keywords:
+  - 模板
+  - template
+  - marketing
+  - utility
+  - authentication
+  - 营销模板
+  - 认证模板
+  - 实用模板
+
+conclusion: "WhatsApp 消息模板按类别（category）分为三种：marketing（营销）、utility（实用）、authentication（认证）；创建时必须归入其中一类。"
+
+answer: |
+  **WhatsApp 消息模板按类别（category）分为三种类型：marketing（营销）、utility（实用）、authentication（认证）。** 官方规定每个模板创建时必须归入其中一类。
+
+  **官方文档来源：**
+  - [templates/overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview)
+  - [template-categorization](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization)
+  - [authentication-templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/authentication-templates)
+  - [utility-templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/utility-templates/utility-templates)
+
+  **三种类型速览：**
+  1. **Marketing（营销）模板** — 最灵活的一类，用于品牌认知、促销优惠、再营销、App 推广、客户关系维护等。官方规定：混合内容（比如「订单更新 + 促销」）、内容不清晰的模板，也会被归为 marketing。
+  2. **Utility（实用）模板** — 通常由用户动作触发，如订单确认／物流更新、账户提醒、反馈调查等。判定标准是：**必须非促销**，且**与用户订单／账户／交易相关，或对用户必需**（如安全提醒）。
+  3. **Authentication（认证）模板** — 唯一可以发送一次性密码（OTP）／验证码的模板类型（**此为 Meta 官方要求**）。限制最严：固定预设文本、不允许 URL／媒体／表情符号、参数不超过 15 个字符。
+
+  **容易踩的坑：**
+  - **类别影响定价**：三类模板计费费率不同，分类直接关系到成本。
+  - **会被自动改分类**：如果在 utility 模板里塞营销内容，系统会自动重新归为 marketing（**此为 Meta 官方要求**）。自 2025-04-09 起，提交为 UTILITY 但被判定应为 MARKETING 的模板将直接按 MARKETING 批准，60 天内可申请复核。
+  - **不要混淆概念**：模板的「组件类型」（header／body／footer／button）和「参数格式」（named／positional）是另一层维度，不是模板类别。
+
+sources:
+  - title: "templates/overview"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview"
+    verified_at: 2026-08-15
+  - title: "template-categorization"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization"
+    verified_at: 2026-08-15
+  - title: "authentication-templates"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/authentication-templates"
+    verified_at: 2026-08-15
+  - title: "utility-templates"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/utility-templates/utility-templates"
+    verified_at: 2026-08-15
+
+scope: doc_question
+handoff_note: ""
+
+aliases: {}
+related_ids: []
+notes: "整理自 2026-08-15 飞书真实会话；与展示页 data.js id=templates 对齐。"
+
+meta:
+  at: "20:15"
+  cost: "61 秒"
+  calls: 8
+steps:
+  - "判定为文档问题，进入检索流程"
+  - "查本地 FAQ：未命中已验证条目"
+  - "抓取官方文档树 templates/overview"
+  - "交叉核验 template-categorization / authentication / utility 页"
+  - "生成结论并回填本地 FAQ"
