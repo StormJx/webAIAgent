@@ -1,0 +1,82 @@
+id: ads-business-verification
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-09-02
+verified_at: 2026-09-02
+verified_by: Jay
+
+question: "广告或商务套件里提示要做企业验证，这和 WhatsApp 绿标是一回事吗"
+question_patterns:
+  - "广告或商务套件里提示要做企业验证，这和 WhatsApp 绿标是一回事吗"
+  - "广告要企业验证"
+  - "Business Verification 广告怎么做"
+  - "广告验证和绿标有什么区别"
+  - "BM 要验证"
+keywords:
+  - 企业验证
+  - business verification
+  - 广告验证
+  - 绿标
+  - 商务套件
+
+conclusion: "不是一回事。广告 / 商务套件里的企业验证是证明这个商务资产组合背后是真实企业；WhatsApp 绿标是证明聊天窗口里那个商务号码。两边都可能叫 verification，材料不能互相替代。"
+
+answer: |
+  **一句话：广告侧企业验证 ≠ WhatsApp 绿标。名字像，流程和后台入口都不是同一套。**
+
+  ### 这是啥
+  官方「关于企业验证」针对的是商务资产组合：按提示提交企业文件，审核通过后组合显示已验证。它解决的是「这个投放主体是谁」，不是「WhatsApp 聊天窗口上那颗勾」。
+
+  ### 怎么做
+  1. 用资产组合管理员登录商务套件。
+  2. 按安全中心或验证向导提交官方要求的文件（以当前页面清单为准，常见是执照、地址等，各国不一样）。
+  3. 等审核，在后台看验证状态。
+  4. 如果提示要验证的是 WhatsApp 商业账号，走的是另一套企业认证，不要把广告验证页的截图发给客户当绿标进度。
+
+  ### 和 WhatsApp 怎么分
+  - 客户说「广告户要验证、BM 要 verification」→ 多半是广告 / 商务企业验证，看本条官方页。
+  - 客户说「WhatsApp 要绿标、企业认证」→ 走 WhatsApp 企业认证，见本库 `oba-vs-bv`。
+  - 两个都要做 → 两套流程都走，不要合并成一次上传。
+
+  ### 官方说明
+  - [关于企业验证](https://www.facebook.com/business/help/2058515294227817)
+  - [商务套件安全中心](https://www.facebook.com/business/help/216940652189296)
+  - [关于商务资产组合](https://www.facebook.com/business/help/1710077379203657)
+
+  ### 容易踩的坑
+  - 客户把营业执照只传了 WhatsApp，广告侧仍显示未验证：要到商务套件再走一遍。
+  - 验证被拒：看拒因补件，Agent 不猜测「是不是因为行业」。
+  - 「验证过了就能开户、就不会被封」：官方没有这种保证。
+
+sources:
+  - type: official
+    title: "About business verification"
+    url: "https://www.facebook.com/business/help/2058515294227817"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Meta Business Suite Security Centre"
+    url: "https://www.facebook.com/business/help/216940652189296"
+    verified_at: 2026-09-02
+  - type: official
+    title: "About business portfolios"
+    url: "https://www.facebook.com/business/help/1710077379203657"
+    verified_at: 2026-09-02
+
+scope: doc_question
+handoff_note: ""
+
+corpus: meta_ads_help
+product: meta_ads
+
+aliases:
+  广告企业验证: "Business verification (Business Suite)"
+  BM验证: "Business verification"
+
+related_ids:
+  - oba-vs-bv
+  - ads-business-portfolio
+  - ads-account-restrictions
+notes: "必须和 WhatsApp BV/OBA FAQ 互链区分；不写可过审材料包或代做验证。"

@@ -45,8 +45,8 @@ sources: []
 scope: doc_question              # doc_question | mixed | handoff
 handoff_note: ""
 
-corpus: field_practice           # meta_developer_docs | whatsapp_help | field_practice
-product: business_platform       # consumer | business_app | business_platform
+corpus: field_practice           # meta_developer_docs | whatsapp_help | meta_ads_help | meta_marketing_api | field_practice
+product: business_platform       # consumer | business_app | business_platform | meta_ads
 
 aliases: {}
 related_ids: []

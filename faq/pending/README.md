@@ -29,8 +29,8 @@ answer: |
   （可先记处理步骤，待确认后再润色）
 sources: []
 scope: doc_question
-corpus: field_practice
-product: business_platform
+corpus: field_practice           # 或 meta_ads_help / meta_developer_docs / whatsapp_help
+product: business_platform       # 或 meta_ads / business_app
 handoff_note: ""
 notes: "等客户确认已解决。提问日期：YYYY-MM-DD。"
 ```

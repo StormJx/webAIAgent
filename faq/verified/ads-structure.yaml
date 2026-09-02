@@ -1,0 +1,92 @@
+id: ads-structure
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-09-02
+verified_at: 2026-09-02
+verified_by: Jay
+
+question: "Meta 广告里的广告系列、广告组和广告分别是干什么的"
+question_patterns:
+  - "Meta 广告里的广告系列、广告组和广告分别是干什么的"
+  - "广告系列是什么"
+  - "广告组是什么"
+  - "campaign ad set ad 有什么区别"
+  - "广告怎么分层"
+  - "广告活动是哪一层"
+keywords:
+  - 广告系列
+  - 广告组
+  - 广告
+  - campaign
+  - ad set
+  - 广告结构
+  - 三层
+  - 目标
+
+conclusion: "一套广告是三层：最外层广告系列定「我要达成什么」；中间广告组定「给谁看、花多少、在哪投」；最里层广告才是大家看到的图、视频和文案。"
+
+answer: |
+  **一句话：Meta 广告不是一张图那么简单，是三层叠在一起。系列定目标，广告组定人和预算，广告才是素材。**
+
+  ### 这是啥
+  官方把一整套投放拆成 **广告系列（Campaign）→ 广告组（Ad set）→ 广告（Ad）**。一层管一层，改错层会牵动下面所有内容。
+
+  ### 每一层管什么
+  1. **广告系列**：选购买类型（现在常见是「成效」）和活动目标。目标定了，后面能选的优化方式会跟着变。现行目标大致是：知名度、流量、互动、潜在客户、应用推广、销量。
+  2. **广告组**：受众、版位（动态消息、快拍、Reels 等）、预算和排期、出价与投放优化。同一系列下可以有多个广告组，用来试不同人群或预算。
+  3. **广告**：创意——图片或视频、正文、标题、行动号召，以及要去的网站、应用或 WhatsApp。同一广告组里可以挂多条广告做创意对比。
+
+  ### 客户说「帮我配一下广告」时怎么拆
+  - 先问目标：要加粉、要进店、要留资，还是要成交？这决定广告系列目标。
+  - 再问给谁看、每天大概花多少、投多久：这是广告组。
+  - 最后才是素材和文案：这是广告。
+  - 不要一上来就只改图片——目标或受众配错，图再好看也白投。
+
+  ### 官方说明
+  - [广告系列、广告组和广告](https://www.facebook.com/business/help/621956575422138)
+  - [如何创建广告系列、广告组和广告](https://www.facebook.com/business/help/1658289035439772)
+  - [广告目标有哪些变化](https://www.facebook.com/business/help/325793898950394)
+  - [Marketing API 里的对象层级](https://developers.facebook.com/docs/marketing-api/get-started/basic-ad-creation/)（给开发对照，操作仍以广告管理工具为准）
+
+  ### 容易踩的坑
+  - 「广告组预算」和「广告系列预算」不是一回事：系列预算是整场活动共花多少，组预算是这一组自己花多少。
+  - 目标选错再改：有的字段创建后不好随便改，可能要新建系列。
+  - 广告账户被限制、进不去广告管理工具：先看账户状态，不要在结构层空转。
+  - 客户要「保证效果 / 保证获客成本」：这是投放策略，不是文档能拍板的，转人工。
+
+sources:
+  - type: official
+    title: "About campaigns, ad sets and ads"
+    url: "https://www.facebook.com/business/help/621956575422138"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Create a campaign, ad set and ad"
+    url: "https://www.facebook.com/business/help/1658289035439772"
+    verified_at: 2026-09-02
+  - type: official
+    title: "An update and changes to ad objectives"
+    url: "https://www.facebook.com/business/help/325793898950394"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Marketing API basic ad creation"
+    url: "https://developers.facebook.com/docs/marketing-api/get-started/basic-ad-creation/"
+    verified_at: 2026-09-02
+
+scope: doc_question
+handoff_note: ""
+
+corpus: meta_ads_help
+product: meta_ads
+
+aliases:
+  广告系列: "Campaign"
+  广告组: "Ad set"
+  广告活动: "Campaign"
+
+related_ids:
+  - ads-create-campaign
+  - ads-ad-account
+notes: "口语三层结构入门。广告目标页用现行 help/325793898950394，旧 ID 610440375785705 已 404。"

@@ -1,0 +1,80 @@
+id: ads-payment
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-09-02
+verified_at: 2026-09-02
+verified_by: Jay
+
+question: "广告账户怎么添加付款方式"
+question_patterns:
+  - "广告账户怎么添加付款方式"
+  - "广告怎么付钱"
+  - "怎么绑定信用卡"
+  - "付款方式在哪加"
+  - "广告扣款失败怎么办"
+  - "账单在哪看"
+keywords:
+  - 付款方式
+  - 账单
+  - 绑卡
+  - billing
+  - payment
+  - 扣款
+
+conclusion: "付款方式挂在广告账户上，不是挂在某一条广告上。到该账户的付款设置里添加可用方式；扣款失败先看账单提示，不要只在广告层反复开关。"
+
+answer: |
+  **一句话：广告账户必须有可用的付款方式，系列才能正常投放。进这个账户的付款设置去绑，换账户就要再看一遍。**
+
+  ### 这是啥
+  付款方式属于**广告账户**。官方路径是在该账户的付款设置里添加信用卡、借记卡等可用方式。
+
+  ### 怎么做
+  1. 打开广告管理工具，确认当前选中的是要绑的那个广告账户。
+  2. 进入该账户的 **付款设置** 或账单 / 付款相关菜单（界面文案可能是「付款设置」「账单」）。
+  3. 按官方步骤添加付款方式，填写账单地址等必填项。
+  4. 保存后，看账户是否仍提示付款问题。
+  5. 日常对账走广告管理工具的账单流水，不要只看银行短信。
+
+  ### 扣款失败时先看什么
+  - 卡是否过期、额度是否不足、是否被银行拦截跨境 / 广告类交易。
+  - 广告账户是否已经处于欠费或付款异常状态——异常没消之前，新广告也可能起不来。
+  - 需要发票、合同主体、退款：这些是财务 / 商务问题，文档只能指到账单页，处理转人工。
+
+  ### 官方说明
+  - [如何添加付款方式](https://www.facebook.com/business/help/132073386867900)
+  - [如何添加或创建广告账户](https://www.facebook.com/business/help/915885887059947)
+
+  ### 容易踩的坑
+  - 绑的是个人卡、票要开给公司：主体对不上，后面报销会炸，创建账户和绑卡前先对齐主体。
+  - 多个广告账户共用一张卡：可以，但每个账户都要进自己的付款设置确认。
+  - 「为什么多扣了 / 要退款」：必须对账单和广告账户，Agent 不能在聊天里承诺退款。
+
+sources:
+  - type: official
+    title: "Add a payment method"
+    url: "https://www.facebook.com/business/help/132073386867900"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Add or create an ad account"
+    url: "https://www.facebook.com/business/help/915885887059947"
+    verified_at: 2026-09-02
+
+scope: mixed
+handoff_note: "绑卡路径可答；发票主体、多扣款争议、退款承诺必须转人工。"
+
+corpus: meta_ads_help
+product: meta_ads
+
+aliases:
+  绑卡: "Add a payment method"
+  账单: "Billing / payment settings"
+
+related_ids:
+  - ads-ad-account
+  - ads-account-restrictions
+  - refund-handoff
+notes: "不写具体卡种是否一定支持（因国家/账户而异）；退款与发票转人工。"

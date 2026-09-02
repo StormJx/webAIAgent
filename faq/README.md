@@ -82,6 +82,8 @@
 | Broadcast lists | 群发列表（广播） |
 | Catalog | 商品目录 |
 | Away message | 离开时的自动回复 |
+| Campaign / Ad set | 广告系列 / 广告组 |
+| BM / Business Manager | 商务资产组合（商务管理平台） |
 | Business Platform / Cloud API | 平台版 / 接口版（需要对接系统的那种） |
 | WABA / BSP / OBA | 首次出现用中文解释，英文缩写放括号里，或放到后文 |
 
@@ -246,3 +248,20 @@ Agent 答完一轮后，**默认只写 `pending/`**，不得直接标 `verified`
 **不收录：** 个人版隐私/安全类帮助（加密、Privacy checkup 等）。
 
 封号类务必先分清 `product`：`business-app-account-ban`（App）与 `ban-appeal`（Platform）不可混用。
+
+### Meta 广告 / Business Help（`corpus: meta_ads_help`，`product: meta_ads`）
+
+| id | 主题 | scope | status |
+|----|------|-------|--------|
+| `ads-structure` | 广告系列 / 广告组 / 广告三层 | doc_question | verified |
+| `ads-create-campaign` | 广告管理工具创建向导 | doc_question | verified |
+| `ads-business-portfolio` | 商务资产组合（常被叫 BM） | doc_question | verified |
+| `ads-ad-account` | 添加或创建广告账户 | doc_question | verified |
+| `ads-payment` | 付款方式（账单争议转人工） | mixed | verified |
+| `ads-permissions` | 广告账户权限 | doc_question | verified |
+| `ads-pixel` | Meta 像素创建与作用 | doc_question | verified |
+| `ads-business-verification` | 广告侧企业验证（≠ 绿标） | doc_question | verified |
+| `ads-account-restrictions` | 广告限制查看入口（个案转人工） | mixed | verified |
+
+广告「企业验证」与 WhatsApp「企业认证 / 绿标」必须分条：`ads-business-verification` 与 `oba-vs-bv` 不可混用。  
+Marketing API 仅作开发对照，操作步骤以 `facebook.com/business/help` 为准。

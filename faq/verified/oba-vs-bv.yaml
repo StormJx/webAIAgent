@@ -55,6 +55,7 @@ answer: |
   ### 容易踩的坑
   - 没有绿标的号，一般**不会出现在 WhatsApp 应用内搜索**里（除非客户手动存了你）。
   - 已经是绿标的号要改显示名，通常要走官方直接支持，不能当普通改名。
+  - 广告 / 商务套件里那套「企业验证」不是绿标，见 `ads-business-verification`，不要把执照只传到一边。
 
 sources:
   - title: "official-business-accounts"
@@ -79,7 +80,8 @@ aliases:
   企业认证: "Business Verification (BV)"
   OBA: "Official Business Account"
 
-related_ids: []
+related_ids:
+  - ads-business-verification
 notes: "已按通俗表达规范改写。保留 blue checkmark 纠正说明；对齐展示页 data.js id=oba。"
 
 meta:

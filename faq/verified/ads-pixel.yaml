@@ -1,0 +1,83 @@
+id: ads-pixel
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-09-02
+verified_at: 2026-09-02
+verified_by: Jay
+
+question: "Meta 像素是干什么的，怎么创建"
+question_patterns:
+  - "Meta 像素是干什么的，怎么创建"
+  - "Pixel 是什么"
+  - "怎么装像素代码"
+  - "转化追踪怎么做"
+  - "数据集是什么"
+  - "事件管理工具在哪"
+keywords:
+  - 像素
+  - pixel
+  - 转化
+  - 数据集
+  - dataset
+  - 事件管理工具
+  - conversion
+
+conclusion: "像素是放在网站上的一小段代码，用来告诉广告账户「有人打开了页面 / 加购 / 下单」。没有它，很多「要成交、要留资」的广告系列很难优化。"
+
+answer: |
+  **一句话：像素 = 网站和广告账户之间的汇报员。没装好，转化类广告后面会缺数据。**
+
+  ### 这是啥
+  官方「关于 Meta 像素」写的是：像素帮助你衡量广告带来的操作，并更准确地找可能转化的人。现在后台里常和 **数据集 / 事件管理工具** 出现在一起，客户口头仍叫 Pixel。
+
+  ### 怎么做
+  1. 在商务套件或事件管理工具里创建像素 / 数据集（按当前向导）。
+  2. 把像素安装到网站：可以是合作伙伴集成（例如网店平台），也可以把基础代码交给网站技术人员加到全站。
+  3. 需要优化的关键行为，再配事件（例如购买、留资）。事件没接到，广告系列选转化时会缺数据。
+  4. 用事件管理工具测试：自己打开一次网站，看有没有浏览或对应事件跳进来。
+  5. 回头创建广告系列时，把这个像素 / 数据集选进广告组的转化设置。
+
+  ### 官方说明
+  - [关于 Meta 像素](https://www.facebook.com/business/help/742478679120153)
+  - [如何创建 Meta 像素](https://www.facebook.com/business/help/952192354843755)
+  - [创建广告系列](https://www.facebook.com/business/help/1658289035439772)（转化目标会用到像素）
+
+  ### 容易踩的坑
+  - 代码只装在首页、下单页没装：会看到浏览、看不到成交。
+  - 多个像素来回选：报表和优化会对错数据集，创建广告前先对一下编号。
+  - 浏览器和系统限制会导致部分事件变少：不要承诺「装了就 100% 对得上后台每一单」。
+  - 客户要「保证像素一定过审、一定能投转化」：安装对了只是前提，账户和广告还要过审，过不了转人工。
+  - 需要服务器事件（CAPI）落地：这是技术方案，转人工，不要在聊天里写实施细节。
+
+sources:
+  - type: official
+    title: "About Meta Pixel"
+    url: "https://www.facebook.com/business/help/742478679120153"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Create a Meta Pixel"
+    url: "https://www.facebook.com/business/help/952192354843755"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Create a campaign, ad set and ad"
+    url: "https://www.facebook.com/business/help/1658289035439772"
+    verified_at: 2026-09-02
+
+scope: doc_question
+handoff_note: ""
+
+corpus: meta_ads_help
+product: meta_ads
+
+aliases:
+  Pixel: "Meta Pixel"
+  像素代码: "Meta Pixel"
+  数据集: "Dataset / Events Manager"
+
+related_ids:
+  - ads-create-campaign
+  - ads-business-portfolio
+notes: "不写 CAPI / 服务器事件实施细节（易过时且像技术方案）；需要落地时转人工。"

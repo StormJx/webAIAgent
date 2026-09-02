@@ -1,0 +1,87 @@
+id: ads-account-restrictions
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: mixed
+customer_confirmed: n/a
+created_at: 2026-09-02
+verified_at: 2026-09-02
+verified_by: Jay
+
+question: "广告账户或商务资产出现限制时，官方让你去哪看"
+question_patterns:
+  - "广告账户或商务资产出现限制时，官方让你去哪看"
+  - "广告户被封了"
+  - "广告账户受限"
+  - "不能投放了"
+  - "广告被停"
+  - "BM 被限制"
+keywords:
+  - 广告限制
+  - 封户
+  - 受限
+  - disabled
+  - restriction
+  - 安全中心
+  - 不能投放
+
+conclusion: "先让客户打开广告管理工具和商务套件安全中心，看提示的是哪一种限制。官方能讲常见限制类型；「为什么偏偏是你这个户、能不能当天解开」聊天里判断不了，要转人工。"
+
+answer: |
+  **一句话：官方页能对照限制类型；「为什么是我、保证解开」我看不到后台，必须转人工。**
+
+  ### 这是啥
+  Meta 可能限制广告账户、主页或整个商务资产组合的投放能力。帮助中心里的原因是概括性的（政策、付款、异常活动等），不会点名某一家客户。
+
+  ### 怎么做（只做官方指引）
+  1. 让客户看广告管理工具里该账户的状态横幅或账户质量。
+  2. 打开商务套件 **安全中心**，看是否有待处理的安全或验证项。
+  3. 阅读「广告限制」帮助页，对照页面列出的限制类型。
+  4. 如果是付款失败导致的停投，先走付款方式，不要先申诉政策。
+  5. 后台有「申请复查 / 申诉」就按按钮走；没有按钮或卡在循环，把提示原文和时间点转人工（不要在聊天里要客户发完整账户编号到公开场合）。
+
+  ### 官方说明
+  - [广告限制](https://www.facebook.com/business/help/975570072950669)
+  - [商务套件安全中心](https://www.facebook.com/business/help/216940652189296)
+  - [关于企业验证](https://www.facebook.com/business/help/2058515294227817)
+
+  ### 我们不在聊天里做的事
+  - 不根据行业、竞品或「是不是代理户」猜测封号原因。
+  - 不提供绕过限制、新开号续投的做法。
+  - 不承诺申诉成功率或恢复时间。
+
+  ### 容易踩的坑
+  - 广告被拒审和账户被限制是两层：一条广告拒了，账户仍可能还能投别的；账户限制则可能全停。
+  - WhatsApp 商业账号被封，不自动等于广告账户被封，要分开查。
+  - 客户要「保证解开」：转人工。
+
+sources:
+  - type: official
+    title: "Advertising restrictions"
+    url: "https://www.facebook.com/business/help/975570072950669"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Meta Business Suite Security Centre"
+    url: "https://www.facebook.com/business/help/216940652189296"
+    verified_at: 2026-09-02
+  - type: official
+    title: "About business verification"
+    url: "https://www.facebook.com/business/help/2058515294227817"
+    verified_at: 2026-09-02
+
+scope: mixed
+handoff_note: "限制类型和官方查看入口可答；「我的户为何被限 / 保证解开 / 换号续投」必须转人工，不得猜原因。"
+
+corpus: meta_ads_help
+product: meta_ads
+
+aliases:
+  广告户被封: "Advertising restrictions"
+  广告停投: "Ad account restriction"
+
+related_ids:
+  - ads-payment
+  - ads-business-verification
+  - refund-handoff
+  - ban-appeal
+notes: "knowledge_type=mixed：官方限制说明 + 岗位上必须转人工的个案诊断。不写申诉说辞。"

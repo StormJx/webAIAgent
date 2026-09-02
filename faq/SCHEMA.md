@@ -25,8 +25,8 @@
 | `answer` | string (Markdown) | 完整回答。官方类须有出处链接；实践类须标明「实践经验，不是官方规定」。 |
 | `sources` | object[] | 来源列表。官方类至少 1 条可打开的 URL；纯实践类可为 `[]`，但须填 `practice_note`。 |
 | `scope` | enum | `doc_question` / `mixed` / `handoff`。 |
-| `corpus` | enum | `meta_developer_docs` / `whatsapp_help` / `field_practice`。 |
-| `product` | enum | `consumer` / `business_app` / `business_platform`。 |
+| `corpus` | enum | `meta_developer_docs` / `whatsapp_help` / `meta_ads_help` / `meta_marketing_api` / `field_practice`。 |
+| `product` | enum | `consumer` / `business_app` / `business_platform` / `meta_ads`。 |
 
 ## 推荐字段
 
@@ -85,7 +85,7 @@ sources:
 
 | 值 | 含义 | 进 `verified/` 的额外门槛 |
 |----|------|---------------------------|
-| `official_docs` | 整理自 Meta / WhatsApp 官方页面 | 链接有效即可；`customer_confirmed` 用 `n/a` |
+| `official_docs` | 整理自 Meta / WhatsApp / 广告帮助中心官方页面 | 链接有效即可；`customer_confirmed` 用 `n/a` |
 | `customer_case` | 来自真实客户提问与处理过程 | **必须** `customer_confirmed: yes`，且客户明确表示问题已解决 |
 | `internal_ops` | 内部运营/对接中反复验证的做法，不绑单一客户 | 须写 `practice_note`；仍不得冒充官方 |
 
@@ -114,9 +114,11 @@ sources:
 |----|-------------|
 | `meta_developer_docs` | `developers.facebook.com/documentation/.../whatsapp/` |
 | `whatsapp_help` | `faq.whatsapp.com`（Business 应用操作） |
+| `meta_ads_help` | `facebook.com/business/help/...`（广告管理工具 / 商务套件操作） |
+| `meta_marketing_api` | `developers.facebook.com/docs/marketing-api/`（广告 Marketing API，给开发对照） |
 | `field_practice` | 无对应官方页，或官方页覆盖不了的实践缺口 |
 
-当前范围：**不收录**个人版隐私/安全类帮助。
+当前范围：**不收录**个人版隐私/安全类帮助。广告配置以 Business Help 为主；Marketing API 仅作开发对照，不要把接口字段写成后台按钮。
 
 ## 产品层枚举（`product`）
 
@@ -125,8 +127,10 @@ sources:
 | `consumer` | 个人版 WhatsApp（当前默认不收录） |
 | `business_app` | 免费 WhatsApp Business 应用 |
 | `business_platform` | WhatsApp Business Platform |
+| `meta_ads` | Meta 广告（广告管理工具、商务资产组合、像素等） |
 
-同一主题在 App / Platform 下入口不同时，必须分成不同 `id`。
+同一主题在 App / Platform / 广告下入口不同时，必须分成不同 `id`。  
+尤其是「企业验证」：广告侧商务套件验证 ≠ WhatsApp 企业认证 / 绿标。
 
 ## 目录约定
 
@@ -149,6 +153,6 @@ faq/
 - [ ] `question_patterns` ≥ 2
 - [ ] `conclusion` 口语可读
 - [ ] 官方类：每条论断有有效 `sources` 链接
-- [ ] `corpus` / `product` 正确，未把 App 写成 Platform
+- [ ] `corpus` / `product` 正确：未把 App 写成 Platform，也未把广告企业验证写成 WhatsApp 绿标
 - [ ] 无账号 ID、chat_id、客户姓名、公司名、内部路径、密钥
 - [ ] 未把未确认个案写成可复用结论
