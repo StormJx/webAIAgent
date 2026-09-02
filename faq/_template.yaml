@@ -35,6 +35,9 @@ answer: |
   - [文档短标题](https://developers.facebook.com/...)
 
 practice_note: "场景、做了什么、客户确认结果。不要写客户身份。"
+evidence_form: text_only         # official_url | text_only | none
+visual_description: ""           # 客户图/截图无法导出时，只写界面原文与按钮，禁止附图
+showcase_ok: false               # 客户素材案例默认不上展示页
 
 sources: []
   # - type: official

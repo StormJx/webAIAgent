@@ -35,6 +35,9 @@
 | `customer_confirmed_at` | date | 客户确认「问题已解决」的日期；`customer_confirmed: yes` 时必填。 |
 | `confirmed_by` | string | 记录确认人（内部），如 `Jay`。不要写客户姓名、公司名、open_id。 |
 | `practice_note` | string | 实践经验摘要：在什么场景、做了什么、为何有效。禁止写成「此为 Meta 官方要求」。 |
+| `evidence_form` | enum | `official_url` / `text_only` / `none`。客户图无法导出时用 `text_only`。 |
+| `visual_description` | string | 对客户截图/素材的**纯文字**还原（界面原文、按钮、报错句）。禁止附图、禁止可识别客户信息。 |
+| `showcase_ok` | bool | 是否允许上公开展示页。客户图转化来的案例默认 `false`。 |
 | `verified_by` | string | 最近验证人，如 `Jay` 或 `agent-auto`。 |
 | `aliases` | map | 业界叫法 → 官方术语对照。 |
 | `handoff_note` | string | 何时必须转人工；`scope` 为 `mixed`/`handoff` 时必填。 |
@@ -151,4 +154,6 @@ faq/
 - [ ] 官方类：每条论断有有效 `sources` 链接
 - [ ] `corpus` / `product` 正确，未把 App 写成 Platform
 - [ ] 无账号 ID、chat_id、客户姓名、公司名、内部路径、密钥
+- [ ] 无客户图片/截图/素材文件；界面问题只用 `visual_description` 文字描述
+- [ ] 客户图来源的案例 `showcase_ok: false`，不进 `public/data.js`
 - [ ] 未把未确认个案写成可复用结论
