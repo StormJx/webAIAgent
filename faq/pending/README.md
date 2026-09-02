@@ -36,7 +36,6 @@ notes: "等客户确认已解决。提问日期：YYYY-MM-DD。"
 ```
 
 客户明确说已解决 → `customer_confirmed: yes`，填 `customer_confirmed_at`，脱敏后**移到** `../verified/`。  
-客户只提供了图片/截图、无法导出时：不要存原图，用 `visual_description` 写清界面原文；`showcase_ok: false`。  
 客户未确认或仍未解决 → 留在本目录或归档，**禁止当成功案例，禁止上展示页**。
 
 规则见 [`../README.md`](../README.md) §3.3。
