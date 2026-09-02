@@ -16,10 +16,13 @@
    飞书 Wiki（若后续接入）只做编辑层；同步方向应为 Wiki → 本地 FAQ，避免双真相源。
 
 3. **宁可 `draft` / 转人工，也不写无出处结论**  
-   与 Agent 岗位定义一致：可核查链接优先于「听起来对」。
+   官方规定必须能落到官方页；实践经验可以补官方空白，但必须标明「不是官方规定」。
 
 4. **优先更新已有条目，禁止重复建条**  
    新增前先按 `id`、关键词、问法搜索本目录；同一问题只保留一条 `verified`。
+
+5. **客户案例必须先确认已解决，才能进可复用库**  
+   Agent 答过 ≠ 可以收录。客户明确说「解决了」之后，才把该条从 `pending/` 升到 `verified/`。未确认的一律当草稿，也不得同步到展示页。
 
 ---
 
@@ -28,7 +31,7 @@
 | 目录 | 放什么 |
 |------|--------|
 | `verified/` | 已验收、可被 Agent 复用的条目（`status: verified`） |
-| `pending/` | 未找到清单、草稿、待重查（`draft` / 待补 `sources`） |
+| `pending/` | 未找到、草稿、**等客户确认已解决**、待重查 |
 | `archived/` | 明确废弃或被合并替代的旧条（`status: archived`） |
 
 文件命名：`<id>.yaml`，与文件内 `id` 字段一致。
@@ -39,18 +42,21 @@
 
 ```
 1. 搜索 verified/ 与 pending/，确认没有重复
-2. 复制 _template.yaml → verified/<id>.yaml（未就绪则放到 pending/）
-3. 填必填字段（见 SCHEMA.md）
-4. 点开每一条 sources[].url，确认仍有效
-5. status 保持 draft，自检验收清单
-6. 通过后改为 verified，填写 verified_at / verified_by
-7. （可选）挑优质案例脱敏后同步到 public/data.js 供展示页回放
+2. 先复制到 pending/<id>.yaml（不要一上来丢进 verified/）
+3. 填 origin / knowledge_type / customer_confirmed
+4. 来自客户提问：customer_confirmed 先填 pending，status 用 awaiting_confirm
+5. 官方页能支撑的部分：补 sources 并点开核验
+6. 实践缺口：写 practice_note，正文标明不是官方规定
+7. 客户确认「已解决」后：customer_confirmed: yes，填日期，再移到 verified/
+8. （可选）仅 verified 且已脱敏的条目，才同步 public/data.js
 ```
 
 ### 手动条目特别容易漏的点
 
 - **问法不够**：只有标准问、没有口语（如「绿标」「老被封号」）→ Agent 命不中  
-- **只有结论、没有官方链接** → 不得标 `verified`  
+- **只有结论、没有官方链接**（且也不是已标明的实践条）→ 不得标 `verified`  
+- **客户还没说解决就把案例写进 verified/** → 禁止  
+- **把实践经验写成「此为 Meta 官方要求」** → 禁止  
 - **该转人工的边界没写**（个案封号原因、退款）→ 写成 `scope: mixed` 或 `handoff` 并填 `handoff_note`  
 - **敏感信息**：账号 ID、chat_id、内部路径、密钥 → 一律删除
 - **太专业**：结论像文档摘要、缩写堆砌 → 按 §3.1 改成口语结论 + 步骤，详见通俗表达规范  
@@ -90,21 +96,67 @@
 - [ ] 操作类问题有没有「点哪里」的步骤？
 - [ ] 有没有在教人「该买 App 还是 API」？（禁止；只说明差别与文档入口）
 
+
+---
+
+## 3.2 实践经验怎么进库（当前优先事项）
+
+官方文档覆盖不了的、你们对接里反复碰到的做法，**应该**沉淀，这是知识库下一步的重点。但要和官方条目分开写。
+
+适合进库的实践：
+- 官方没写清、但按某步骤做了、**客户已确认问题解决**
+- 中文圈叫法与后台实际按钮对不上，你们对过的对照
+- 常见误操作（例如群发收不到，其实是对方没存号——这类已有官方依据的，仍归 official）
+
+不适合进库：
+- 只答过、客户没回或仍说没好
+- 绑在某一个账号上的诊断（「张三的号因为某某被封」）
+- 听起来像保证的话（「这样一定能过审」）
+- 未脱敏的客户原话里带公司名、号码、后台截图隐私
+
+实践条 `answer` 建议多一句：
+
+> 下面是我们实际处理过、且客户确认已解决的做法，**不是** Meta 官方规定；官方若日后有明文，以官方为准。
+
+---
+
+## 3.3 客户确认闸门（硬限制）
+
+```
+客户提问 → Agent 作答 → 先记 pending（awaiting_confirm）
+                 ↓
+        客户明确表示已解决？
+           /              \
+         是                否 / 无回复
+          ↓                    ↓
+   脱敏后升 verified      留 pending 或归档
+   才可进展示案例         禁止当成功案例
+```
+
+「确认已解决」只认客户侧意思，例如「好了」「解决了」「可以了」。  
+内部觉得答得好、或只是客户已读，都不算。
+
+升库前再洗一遍：去掉 open_id、chat_id、公司名、联系人、具体号码。只保留可复用的问法与步骤。
+
 ---
 
 ## 4. Agent 自动回填约定
 
-Agent 答完一轮后回填时，应写入与本 Schema 相同的字段，并满足：
+Agent 答完一轮后，**默认只写 `pending/`**，不得直接标 `verified`。
 
 | 要求 | 说明 |
 |------|------|
 | `source: auto` | 标明来自自动回填 |
-| `status` | 默认可为 `draft` 或经链接核验后 `verified`；不确定时用 `draft` 进 `pending/` |
-| `sources` | 本轮实际采纳的官方 URL，带 `verified_at` |
-| `question_patterns` | 至少包含用户原话 |
-| 命中旧条且链接失效 | **更新原文件**，不要新建；在 `notes` 记录「链接迁移 / 结论修正」 |
+| `origin` | 来自客户提问则用 `customer_case` |
+| `customer_confirmed` | 一律先 `pending`；`status: awaiting_confirm` |
+| `status` | 只用 `draft` 或 `awaiting_confirm`，禁止自动写成 `verified` |
+| `sources` | 本轮实际用到的官方 URL（若有） |
+| `question_patterns` | 至少包含用户原话（脱敏，去掉账号/公司名） |
+| 命中旧条且链接失效 | **更新原文件**，不要新建 |
 
-「未找到」类问题：在 `pending/` 新增一条，`status: draft`，`notes` 写明检索过的关键词与日期，便于人工补文档或改岗位规则。
+「未找到」：`pending/` + `draft`，`notes` 写检索日期和关键词。  
+客户确认已解决：人工改 `customer_confirmed: yes`，再考虑升 `verified/`。  
+客户说没解决或未回复：保持 pending，或归档，**不要**当成功案例。
 
 ---
 
@@ -130,10 +182,11 @@ Agent 答完一轮后回填时，应写入与本 Schema 相同的字段，并满
 
 从 FAQ 同步到展示页时：
 
-1. 脱敏（无内部 ID、路径）  
-2. 回答可转为 HTML（展示页需要）  
-3. 补 `chip`、`meta`、`steps` 等展示字段  
-4. **先改 FAQ，再改 data.js**，避免只更新演示、知识库落后  
+1. **仅** `verified/` 且 `customer_confirmed` 为 `n/a` 或 `yes`  
+2. 脱敏（无内部 ID、客户身份、路径）  
+3. 实践条在展示页也要写清「实践经验，非官方规定」  
+4. 补 `chip`、`meta`、`steps`  
+5. **先改 FAQ，再改 data.js**
 
 ---
 
@@ -157,8 +210,10 @@ Agent 答完一轮后回填时，应写入与本 Schema 相同的字段，并满
 - 方案选型（「适不适合我们」「买哪一档」）  
 - 退款、赔偿、改合同  
 - 无官方文档依据的「保证」「一定可以」  
+- 把未确认解决的客户问答当成可复用案例  
+- 把实践经验写成 Meta 官方要求  
 
-对应写法：`scope: handoff` 或 `mixed`，并写清 `handoff_note`。
+对应写法：`scope: handoff` 或 `mixed`，并写清 `handoff_note`。实践缺口用 `knowledge_type: field_practice`，不要硬编官方链接。
 
 ---
 

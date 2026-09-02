@@ -31,7 +31,7 @@
 
 ## 本地 FAQ
 
-Agent 可复用的已验证问答在 `faq/verified/`。手动新增与自动回填**共用同一套字段**，规则见：
+Agent 可复用的已验证问答在 `faq/verified/`。客户提问须等对方确认**已解决**后才能从 `pending/` 升入；实践经验与官方文档分开标注。规则见：
 
 - [`faq/README.md`](faq/README.md) — 维护流程、过期策略、与展示页关系
 - [`faq/SCHEMA.md`](faq/SCHEMA.md) — 字段定义与验收清单

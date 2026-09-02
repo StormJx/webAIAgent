@@ -1,11 +1,16 @@
-# 复制本文件为 faq/verified/<id>.yaml 或 faq/pending/<id>.yaml 后填写。
-# 字段说明见 faq/SCHEMA.md；维护流程见 faq/README.md。
+# 复制为 faq/pending/<id>.yaml；客户确认已解决后再移到 verified/。
+# 见 faq/SCHEMA.md、faq/README.md §3.2 / §3.3。
 
 id: example-topic-slug
-status: draft                    # draft | verified | stale | archived
+status: awaiting_confirm         # draft | awaiting_confirm | verified | stale | archived
 source: manual                   # manual | auto
-created_at: 2026-08-29
-verified_at: 2026-08-29
+origin: customer_case            # official_docs | customer_case | internal_ops
+knowledge_type: field_practice   # official | field_practice | mixed
+customer_confirmed: pending      # n/a | pending | yes
+customer_confirmed_at: ""        # customer_confirmed: yes 时必填
+confirmed_by: ""                 # 内部记录，禁止写客户姓名
+created_at: 2026-09-02
+verified_at: 2026-09-02
 verified_by: Jay
 
 question: "标准问法写在这里"
@@ -16,44 +21,33 @@ keywords:
   - 中文关键词
   - english-term
 
-conclusion: "一句话结论，必须能被官方文档支撑。"
+conclusion: "一句话结论。实践条不要说成官方规定。"
 
 answer: |
-  **一句话结论复述或略展开。**
+  **一句话结论。**
 
-  **官方文档来源：**
+  若是实践经验，先写：下面是我们实际处理过、且客户确认已解决的做法，**不是** Meta 官方规定。
+
+  **怎么做：**
+  1. …
+
+  **官方出处（若有）：**
   - [文档短标题](https://developers.facebook.com/...)
 
-  **要点：**
-  1. …
-  2. …
+practice_note: "场景、做了什么、客户确认结果。不要写客户身份。"
 
-  **容易踩的坑：**
-  - …
-
-sources:
-  - title: "docs-path-or-short-title"
-    url: "https://developers.facebook.com/documentation/..."
-    verified_at: 2026-08-29
+sources: []
+  # - type: official
+  #   title: "docs-path"
+  #   url: "https://developers.facebook.com/documentation/..."
+  #   verified_at: 2026-09-02
 
 scope: doc_question              # doc_question | mixed | handoff
-handoff_note: ""                 # mixed / handoff 时必填
+handoff_note: ""
 
-corpus: whatsapp_help            # meta_developer_docs | whatsapp_help
-product: business_app            # consumer | business_app | business_platform
+corpus: field_practice           # meta_developer_docs | whatsapp_help | field_practice
+product: business_platform       # consumer | business_app | business_platform
 
-aliases:
-  # 业界叫法: "官方英文术语（全称）"
-  # 绿标: "blue checkmark (Official Business Account)"
-
+aliases: {}
 related_ids: []
 notes: ""
-
-# 可选：运行 / 展示元数据
-# meta:
-#   at: "20:15"
-#   cost: "61 秒"
-#   calls: 8
-# steps:
-#   - "判定为文档问题，进入检索流程"
-# tone: handoff

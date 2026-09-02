@@ -2,33 +2,40 @@
 
 本目录存放：
 
-1. **`status: draft`** 的草稿条目（含人工未验收、Agent 自动回填未确认）
-2. **「未找到」问题**：文档检索无果，等待补官方来源或改写岗位规则
-3. **待重查**：已从 `verified/` 标为 `stale`、尚未完成复验的条目（可选放这里）
+1. **`draft`**：未写完、未验收、官方链接未核验
+2. **`awaiting_confirm`**：已根据客户问题起草，**等客户确认已解决**（默认落点）
+3. **「未找到」**：文档检索无果
+4. **待重查**：从 `verified/` 标为 `stale` 的条目
 
-## 怎么新增一条「未找到」
+## 客户案例（默认流程）
 
-复制 [`../_template.yaml`](../_template.yaml)，保存为 `<简短-id>.yaml`，至少填写：
+Agent 或人工刚处理完客户问题 → **先写在这里**，不要进 `verified/`。
 
 ```yaml
 id: pending-topic-slug
-status: draft
-source: manual   # 或 auto
+status: awaiting_confirm
+source: manual          # 或 auto
+origin: customer_case
+knowledge_type: field_practice   # 或 mixed
+customer_confirmed: pending
 created_at: YYYY-MM-DD
 verified_at: YYYY-MM-DD
-question: "用户原话"
+question: "脱敏后的问法"
 question_patterns:
-  - "用户原话"
+  - "脱敏后的问法"
 keywords: []
 conclusion: ""
 answer: |
-  （可空）待补充。
+  （可先记处理步骤，待确认后再润色）
 sources: []
 scope: doc_question
+corpus: field_practice
+product: business_platform
 handoff_note: ""
-notes: "未找到。检索日期：YYYY-MM-DD。试过关键词：…"
+notes: "等客户确认已解决。提问日期：YYYY-MM-DD。"
 ```
 
-补齐 `sources` 与 `answer` 并验收后：将 `status` 改为 `verified`，**移动文件到** `../verified/`。
+客户明确说已解决 → `customer_confirmed: yes`，填 `customer_confirmed_at`，脱敏后**移到** `../verified/`。  
+客户未确认或仍未解决 → 留在本目录或归档，**禁止当成功案例，禁止上展示页**。
 
-规则详见 [`../README.md`](../README.md)。
+规则见 [`../README.md`](../README.md) §3.3。

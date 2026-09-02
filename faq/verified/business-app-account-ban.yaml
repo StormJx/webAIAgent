@@ -1,6 +1,9 @@
 id: business-app-account-ban
 status: verified
 source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
 created_at: 2026-08-29
 verified_at: 2026-08-29
 verified_by: Jay
