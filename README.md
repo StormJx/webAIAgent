@@ -57,7 +57,7 @@ vercel --prod     # 部署并输出公开链接
 
 ## 更新内容
 
-- **增删 FAQ（优先）：** 按 `faq/README.md` 在 `faq/verified/` 或 `faq/pending/` 增改 YAML
+- **增删 FAQ（优先）：** 客户案例先写 `faq/pending/`，确认已解决再移 `faq/verified/`；官方整理可走 `official_docs`
 - 增删展示问答：编辑 `data.js` 里的数组，每项含 `chip`（按钮文案）、`question`、`meta`（时间/耗时/调用次数）、`steps`（执行轨迹）、`answer`（HTML）；内容应与对应 FAQ 条目一致
 - 改文案与章节：编辑 `index.html`
 - 改完执行 `vercel --prod` 重新发布
