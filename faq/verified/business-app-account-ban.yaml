@@ -1,0 +1,70 @@
+id: business-app-account-ban
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-08-29
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "WhatsApp Business 应用被封号了怎么申诉"
+question_patterns:
+  - "WhatsApp Business 应用被封号了怎么申诉"
+  - "商务 App 提示 This phone number can't use WhatsApp"
+  - "Request review 在 App 里点哪里"
+  - "第三方说可以帮我解封是真的吗"
+  - "手机商务版被封怎么弄"
+keywords:
+  - 封号
+  - 解封
+  - Business app
+  - Request review
+  - banned
+  - 商务应用
+
+conclusion: "如果是手机上免费的商务版 App 被封：打开 App，有「申请复核」按钮就点它等结果（官方说多数大约一天内）。看不到按钮，一般就申诉不了。网上说能花钱解封的，别信——只有 WhatsApp 能处理。"
+
+answer: |
+  **先分清：你用的是手机商务版 App，还是接系统的平台版？**  
+  两种封号的申诉入口不一样。下面只讲 **手机商务版 App**。
+
+  **一句话：App 里有「申请复核」就点；没有这个按钮，通常就不能再申了。**
+
+  ### 你可能看到的提示
+  - 打开 App 出现类似：这个号码不能使用 WhatsApp，可以申请复核……
+
+  ### 怎么申请
+  1. 在 App 里点 **申请复核（Request review）**。
+  2. 等待处理（官方称多数大约 **24 小时**内有结果）。
+  3. 在 App 里看进度；有结果时会通知你。
+
+  ### 必须知道的边界
+  - **看不到「申请复核」** → 官方视为最终封禁，**无法再申诉**。
+  - 换个号、找别的客服通道去催，**不会**让结果更快或改变。
+  - **任何第三方都不能**帮你封号或解封，只有 WhatsApp 可以。
+
+  ### 官方说明
+  - [商务版 App 账号封禁说明](https://faq.whatsapp.com/723378546580115)
+
+  ### 若你其实用的是平台版
+  - 不要套用上面的 App 按钮；平台版要走后台「商业支持主页」那套流程，见另一条 FAQ（平台封号申诉）。
+
+sources:
+  - title: "About account bans on the WhatsApp Business app"
+    url: "https://faq.whatsapp.com/723378546580115"
+    verified_at: 2026-08-29
+
+scope: mixed
+handoff_note: "可说明 App 内申请复核机制与「无按钮则不可申诉」；不得猜测「为什么是我的号被封」，个案转人工。"
+
+corpus: whatsapp_help
+product: business_app
+
+aliases:
+  解封: "Request review (WhatsApp Business app)"
+
+related_ids:
+  - ban-appeal
+  - business-app-vs-platform
+notes: "已按通俗表达规范改写。与 ban-appeal（Platform）成对。"

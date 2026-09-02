@@ -1,0 +1,70 @@
+id: business-app-quick-replies
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-08-29
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "WhatsApp Business 应用快捷回复怎么用"
+question_patterns:
+  - "WhatsApp Business 应用快捷回复怎么用"
+  - "Quick replies 怎么设置"
+  - "斜杠 / 快捷回复"
+  - "怎么快速发送常用话术"
+  - "常用语怎么一键发送"
+keywords:
+  - 快捷回复
+  - quick replies
+  - 话术
+  - 快捷键
+  - /
+
+conclusion: "快捷回复 = 把常用话术存起来，聊天时点一下或输入「/」就能插入。地址、营业时间等，填好商业资料后还可能自动生成几条默认话术。"
+
+answer: |
+  **一句话：把「你好请问需要什么」「我们地址是…」存成话术，以后不用每次手打。**
+
+  ### 怎么新建一条
+  1. 打开 **工具（Tools）** → **快捷回复（Quick replies）**。
+  2. 新建，写上要发的内容。
+  3. 设一个好记的 **快捷方式（Shortcut）**。
+  4. 保存。  
+  说明：在 **电脑网页版 / 桌面版** 上，快捷回复**不能带图片视频**；手机端更完整。
+
+  ### 聊天时怎么用
+  - 打开对话 → 找快捷回复入口 → 选一条；或  
+  - 在输入框敲 **`/`**，弹出全部话术（含默认的），选中后出现在输入框，再发送。
+
+  ### 默认话术从哪来
+  - 你把商业资料（地址、营业时间等）填得越完整，App 越可能自动生成「发地址」「发营业时间」这类默认快捷回复。
+  - 资料怎么填，见 [商业资料说明](https://faq.whatsapp.com/577829787429875)。
+
+  ### 官方说明
+  - [快捷回复怎么用](https://faq.whatsapp.com/1791149784551042)
+
+sources:
+  - title: "How to use quick replies"
+    url: "https://faq.whatsapp.com/1791149784551042"
+    verified_at: 2026-08-29
+  - title: "About your business profile"
+    url: "https://faq.whatsapp.com/577829787429875"
+    verified_at: 2026-08-29
+
+scope: doc_question
+handoff_note: ""
+
+corpus: whatsapp_help
+product: business_app
+
+aliases:
+  快捷回复: "Quick replies"
+  话术库: "Quick replies"
+  常用语: "Quick replies"
+
+related_ids:
+  - business-app-away-message
+  - business-app-vs-platform
+notes: "已按通俗表达规范改写。"

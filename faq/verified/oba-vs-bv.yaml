@@ -1,0 +1,96 @@
+id: oba-vs-bv
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-08-15
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "请告诉我 OBA 是什么，跟企业认证 BV 有什么关系"
+question_patterns:
+  - "OBA 是什么，跟企业认证 BV 有什么关系"
+  - "什么是 OBA"
+  - "绿标是什么"
+  - "企业认证和官方商业账号有什么区别"
+  - "蓝标 / 绿色对勾是什么意思"
+keywords:
+  - oba
+  - 绿标
+  - 蓝标
+  - 企业认证
+  - bv
+  - official business
+  - 显示名
+  - 对勾
+  - business verification
+
+conclusion: "大家说的「绿标」，官方叫官方商业账号，名字旁边会有一个蓝色对勾。企业认证是先证明「公司是真的」；认证通过不会自动给绿标，还要再单独申请。"
+
+answer: |
+  **一句话：企业认证 = 证明公司是真的；绿标 = 额外申请的「官方号」信任标记。先认证，再申请绿标，认证完不会自动变绿标。**
+
+  ### 两个东西分别是啥
+  - **企业认证**：Meta 审核你的公司资质是不是真实、合法注册。
+  - **官方商业账号**（常被叫绿标 / OBA）：通过认证的企业，其 WhatsApp 商务号码名称旁可带 **蓝色对勾**。  
+    官方英文写的是 blue checkmark（蓝勾）；中文圈里很多人仍叫「绿标」。  
+    它是展示用的信任标识，**不是**你使用平台版的前提。
+
+  ### 申请绿标还要满足啥（官方要求）
+  - 已完成企业认证（硬性条件之一）
+  - 遵守商务消息政策
+  - 在平台注册满 30 天
+  - 号码开了两步验证
+  - 显示名已通过审核
+
+  在 WhatsApp Manager 里：手机号 → 资料 → Official business account → 提交申请；也可以走官方状态接口。  
+  批不批由 Meta 决定；**被拒后要等 30 天才能再交。**
+
+  ### 官方说明
+  - [官方商业账号](https://developers.facebook.com/documentation/business-messaging/whatsapp/official-business-accounts)
+  - [消息量限制](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits)（完成企业认证后，起步额度常从 250 提到 2,000）
+  - [显示名](https://developers.facebook.com/documentation/business-messaging/whatsapp/display-names)
+
+  ### 容易踩的坑
+  - 没有绿标的号，一般**不会出现在 WhatsApp 应用内搜索**里（除非客户手动存了你）。
+  - 已经是绿标的号要改显示名，通常要走官方直接支持，不能当普通改名。
+  - 广告 / 商务套件里那套「企业验证」不是绿标，见 `ads-business-verification`，不要把执照只传到一边。
+
+sources:
+  - title: "official-business-accounts"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/official-business-accounts"
+    verified_at: 2026-08-15
+  - title: "messaging-limits"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits"
+    verified_at: 2026-08-15
+  - title: "display-names"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/display-names"
+    verified_at: 2026-08-15
+
+scope: doc_question
+handoff_note: ""
+
+corpus: meta_developer_docs
+product: business_platform
+
+aliases:
+  绿标: "blue checkmark (Official Business Account)"
+  蓝标: "blue checkmark (Official Business Account)"
+  企业认证: "Business Verification (BV)"
+  OBA: "Official Business Account"
+
+related_ids:
+  - ads-business-verification
+notes: "已按通俗表达规范改写。保留 blue checkmark 纠正说明；对齐展示页 data.js id=oba。"
+
+meta:
+  at: "19:29"
+  cost: "106 秒"
+  calls: 13
+steps:
+  - "判定为文档问题，进入检索流程"
+  - "FAQ 命中旧条目，但链接为已迁移的旧路径"
+  - "按规则重新核验：抓取 official-business-accounts 页"
+  - "交叉核验 display-names / messaging-limits 页"
+  - "修正旧结论（绿色对勾 → 官方原文 blue checkmark）并回填 FAQ"

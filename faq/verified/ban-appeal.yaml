@@ -1,0 +1,96 @@
+id: ban-appeal
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-08-15
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "为什么老被封号，我新创建的账号怎么就会被封号限制，我该如何申诉"
+question_patterns:
+  - "为什么老被封号，我该如何申诉"
+  - "账号被限制了怎么申诉"
+  - "新账号为什么会被封"
+  - "Request Review 怎么弄"
+  - "违规了怎么恢复"
+keywords:
+  - 封号
+  - 申诉
+  - 限制
+  - 违规
+  - policy
+  - review
+  - 下架
+  - Request Review
+
+conclusion: "官方能讲清「一般为什么会被限制」和「后台怎么点申诉」；但讲不清「为什么偏偏是你的号」——那要看你账号里的违规记录，需要人工查。新号和老号规则一样，不是因为新才封。"
+
+answer: |
+  **先分清：下面说的是平台版（接系统 / 商业账户后台）的封禁，不是手机商务版 App 里那套按钮。**
+
+  **一句话：规则和申诉步骤可以按文档讲；「你这个号到底踩了哪条」我看不到后台，要转人工。**
+
+  ### 一般为什么会被限制（官方机制）
+  反复违反商务消息政策、电商政策或商业条款时，处罚会一级级加重，例如：
+  1. 先警告；
+  2. 再犯（滥发、模板类目乱标、高风险品类等）→ 短则禁发模板几天，再重则禁发所有消息，直至**锁号**（只能靠申诉）、多次不改可能永久停用；
+  3. 严重危害用户的行为 → 可能直接下架；
+  4. 用户投诉太多，也可能被限制或下架。
+
+  ### 怎么在后台申诉
+  1. 登录 Meta 商业套件 / 商务管理平台，打开 **商业支持主页（Business Support Home）**。
+  2. 选中相关的 WhatsApp 商业账户。
+  3. 在违规列表里点对应项 → **申请复核（Request Review）**。
+  4. 按提示补充证据后提交。
+
+  补充：被限制或停用后往往仍可申诉；但官方写明，**不是所有垃圾信息类违规都能申诉**，有的要等限制期过完。
+
+  ### 「新号怎么就被封」
+  - 新号也走同一套规则，看的是**有没有违规行为**，不是「号太新」。
+  - **你号上的具体原因**，必须到商业支持主页看违规记录才能定，文档答疑员看不到，请转人工。
+
+  ### 官方说明
+  - [政策怎么执行](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement)
+  - [违规类型](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement-violations)
+  - [支持与申诉入口](https://developers.facebook.com/documentation/business-messaging/whatsapp/support)
+
+  ### 若你用的是手机商务版 App
+  - 申诉入口在 App 里的「申请复核」，见另一条 FAQ，不要和上面后台步骤混用。
+
+sources:
+  - title: "policy-enforcement"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement"
+    verified_at: 2026-08-15
+  - title: "policy-enforcement-violations"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement-violations"
+    verified_at: 2026-08-15
+  - title: "support"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/support"
+    verified_at: 2026-08-15
+
+scope: mixed
+handoff_note: "政策机制与申诉步骤可答；「我的号为何被封」等个案必须转人工，不得猜原因。"
+
+corpus: meta_developer_docs
+product: business_platform
+
+aliases:
+  申诉: "Request Review (Business Support Home)"
+
+related_ids:
+  - refund-handoff
+  - business-app-account-ban
+notes: "已按通俗表达规范改写。仅覆盖 Platform；App 见 business-app-account-ban。对齐展示页 data.js id=ban。"
+
+meta:
+  at: "20:28"
+  cost: "95 秒"
+  calls: 10
+steps:
+  - "拆分问题：政策机制可答，个案原因需转人工"
+  - "抓取 policy-enforcement 政策执行页"
+  - "核验 policy-enforcement-violations 违规类型清单"
+  - "核验 support 页确认官方申诉入口"
+  - "结论分层输出：可答部分给文档，个案部分标注转人工"

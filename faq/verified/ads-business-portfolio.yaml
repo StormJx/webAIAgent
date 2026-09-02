@@ -1,0 +1,85 @@
+id: ads-business-portfolio
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-09-02
+verified_at: 2026-09-02
+verified_by: Jay
+
+question: "商务管理平台里的商务资产组合是干什么的"
+question_patterns:
+  - "商务管理平台里的商务资产组合是干什么的"
+  - "BM 是什么"
+  - "Business Manager 怎么建"
+  - "商务资产组合是什么"
+  - "怎么开商务管理平台"
+keywords:
+  - 商务资产组合
+  - business portfolio
+  - BM
+  - business manager
+  - 商务管理平台
+  - 商务套件
+  - 资产
+
+conclusion: "现在官方多半叫「商务管理平台」和「商务资产组合」，不再满屏写 Business Manager。资产组合是公司名下那一层保险箱：广告账户、主页、像素都可以放进去再给人开权限。"
+
+answer: |
+  **一句话：商务资产组合是公司的资产保险箱，广告账户是箱子里的东西，不是箱子本身。客户说「开个 BM」，多半指建这个组合。**
+
+  ### 这是啥
+  Meta 商务套件下面用 **商务资产组合（business portfolio）** 把一家企业的资产收在一起。一个人可以有多个资产组合。广告账户、主页、像素通常要先属于某个组合，团队才能在同一个地方管权限。
+
+  ### 怎么做
+  1. 打开商务套件：https://business.facebook.com
+  2. 按官方「创建商务资产组合」走：填企业名称等资料。创建时官方写明：你创建的这个组合由你负责，你就是该组合的管理员。
+  3. 组合建好后，再往里添加或创建广告账户、主页、像素等资产。
+  4. 需要同事投放时，在资产组合里加人，并给到**具体广告账户**的权限——不要把个人登录密码发给对方。
+
+  ### 和广告账户的关系
+  - 先有资产组合，再往里放广告账户（也可以在组合里直接创建广告账户，视官方当前入口而定）。
+  - 一个组合里可以有多个广告账户（例如不同品牌、不同币种或不同主体）。
+  - 客户说「BM 被封了」：要分清是整个商务资产组合受限，还是里面某一个广告账户受限，两者处理入口不一样。
+
+  ### 官方说明
+  - [关于商务资产组合](https://www.facebook.com/business/help/1710077379203657)
+  - [如何添加或创建广告账户](https://www.facebook.com/business/help/915885887059947)
+  - [广告账户权限](https://www.facebook.com/business/help/1143109949216644)
+
+  ### 容易踩的坑
+  - 用个人广告账户投了很久，后来才建资产组合：要把账户声明 / 添加进组合，不是再注册一个 Facebook 号就自动过去。
+  - 广告侧的「企业验证」和 WhatsApp「企业认证（绿标）」不是同一件事，不要互相替代。
+  - 「我们公司 BM 被封、所有户都不能投」：属于账户安全 / 限制个案，先看商务套件安全中心，细节转人工。
+
+sources:
+  - type: official
+    title: "About business portfolios"
+    url: "https://www.facebook.com/business/help/1710077379203657"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Add or create an ad account"
+    url: "https://www.facebook.com/business/help/915885887059947"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Ad account permissions"
+    url: "https://www.facebook.com/business/help/1143109949216644"
+    verified_at: 2026-09-02
+
+scope: doc_question
+handoff_note: ""
+
+corpus: meta_ads_help
+product: meta_ads
+
+aliases:
+  BM: "Business portfolio (商务资产组合)"
+  Business Manager: "Meta Business Suite / business portfolio"
+  商务管理平台: "Meta Business Suite"
+
+related_ids:
+  - ads-ad-account
+  - ads-permissions
+  - ads-business-verification
+notes: "用语跟现行中文帮助中心（商务资产组合），避免只写已过时的 BM 简称而不解释。"

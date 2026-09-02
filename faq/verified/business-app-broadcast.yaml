@@ -1,0 +1,76 @@
+id: business-app-broadcast
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-08-29
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "WhatsApp Business 应用里广播列表怎么用"
+question_patterns:
+  - "WhatsApp Business 应用里广播列表怎么用"
+  - "Broadcast 群发怎么发"
+  - "为什么广播发出去对方收不到"
+  - "能不能用标签一键群发"
+  - "群发为什么没人收到"
+keywords:
+  - 广播
+  - broadcast
+  - 群发
+  - 广播列表
+  - message customers
+  - 群发列表
+
+conclusion: "商务版 App 的「群发列表」可以一次给很多人各发一条私聊。但有个硬条件：对方手机通讯录里必须存了你的号码，否则收不到。客户回复时，只有你和他两个人看得见，不会群聊爆炸。"
+
+answer: |
+  **一句话：群发 = 你写一次，系统分别塞进每个人的私聊里；对方没存你的号，就收不到。**
+
+  ### 这是啥
+  - 你先建一份客户名单（群发列表）。
+  - 发出去后，客户那边看起来像你在跟他单独聊天，不是一个大群。
+  - 客户若回复，只出现在你和他的对话里，**不会**同步给名单里其他人。
+
+  ### 最容易踩的坑（先看这个）
+  - **对方必须先把你的号码存进手机通讯录**，才会收到群发。
+  - 很多人以为是「网络坏了」或「WhatsApp 限流了」，其实是对方没存号。
+  - 若你希望大家在同一会话里互相讨论，请建**群组**，不要用群发列表。
+
+  ### 怎么从「标签」一键群发
+  1. 打开 **标签（Labels）**（有的版本已改成「列表 Lists」）。
+  2. 点选某个标签 → **Message customers（给客户发消息）**。
+  3. 编辑内容后发送。  
+  官方说明：用标签发起的群发**不能发给群组**，只发给个人客户。
+
+  ### 官方说明
+  - [群发列表怎么用](https://faq.whatsapp.com/653415899610349)
+  - [标签怎么用](https://faq.whatsapp.com/3398508707096369)
+
+  ### 再提醒一句
+  - 这是**手机商务版 App** 的功能，和平台版「按模板大批量发消息」不是同一套玩法。
+
+sources:
+  - title: "How to use broadcast lists on the WhatsApp Business app"
+    url: "https://faq.whatsapp.com/653415899610349"
+    verified_at: 2026-08-29
+  - title: "How to use labels"
+    url: "https://faq.whatsapp.com/3398508707096369"
+    verified_at: 2026-08-29
+
+scope: doc_question
+handoff_note: ""
+
+corpus: whatsapp_help
+product: business_app
+
+aliases:
+  群发: "Broadcast list"
+  广播列表: "Broadcast list"
+  群发列表: "Broadcast list"
+
+related_ids:
+  - business-app-labels
+  - business-app-vs-platform
+notes: "已按通俗表达规范改写。未写入未经官文确认的人数上限。"

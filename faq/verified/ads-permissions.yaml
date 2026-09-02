@@ -1,0 +1,79 @@
+id: ads-permissions
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-09-02
+verified_at: 2026-09-02
+verified_by: Jay
+
+question: "怎么给人开广告账户权限"
+question_patterns:
+  - "怎么给人开广告账户权限"
+  - "广告权限怎么加"
+  - "怎么让同事投广告"
+  - "广告账户角色有哪些"
+  - "给代理开户"
+keywords:
+  - 权限
+  - 广告账户权限
+  - 角色
+  - access
+  - permission
+  - 加人
+
+conclusion: "不要把 Facebook 登录密码发给任何人。在商务资产组合里把人加进来，再给到具体广告账户的权限。对方用自己的账号登录就能看到这个户。"
+
+answer: |
+  **一句话：加人、给广告账户权限，不要共用登录密码。只加进资产组合、没给账户权限，对方还是投不了。**
+
+  ### 这是啥
+  广告账户权限决定谁能看报表、谁能改广告、谁能管付款。官方有一篇「广告账户权限」说明各角色能做什么。资产组合管理员和广告账户上的角色不是自动划等号，该给账户权限还是要给。
+
+  ### 怎么做
+  1. 用资产组合管理员（或已有足够权限的人）登录商务套件。
+  2. 把对方的 Facebook 账号 / 邮箱加进商务资产组合（对方需要接受邀请）。
+  3. 在广告账户的人员权限里，按官方角色给对方开通（例如广告主、分析员等，以当前帮助中心名称为准）。
+  4. 让对方在广告管理工具切换到这个广告账户，确认能看到系列列表。
+  5. 合作结束就收回权限，不要只靠「口头说别动了」。
+
+  ### 官方说明
+  - [广告账户权限](https://www.facebook.com/business/help/1143109949216644)
+  - [关于商务资产组合](https://www.facebook.com/business/help/1710077379203657)
+  - [如何添加或创建广告账户](https://www.facebook.com/business/help/915885887059947)
+
+  ### 容易踩的坑
+  - 只加了资产组合、没给广告账户权限：对方进得了商务套件，但选不到户或不能创建广告。
+  - 给了管理员却把付款权限也给代理：代理能改绑卡，风险很大，按最小权限开。
+  - 「对方说没收到邀请」：检查邮箱垃圾箱、对方是否用另一枚 Facebook 登录、邀请是否过期。
+  - 共享个人账号：违反安全习惯，也容易触发异常登录；官方路径就是权限，不是共用密码。
+
+sources:
+  - type: official
+    title: "Ad account permissions"
+    url: "https://www.facebook.com/business/help/1143109949216644"
+    verified_at: 2026-09-02
+  - type: official
+    title: "About business portfolios"
+    url: "https://www.facebook.com/business/help/1710077379203657"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Add or create an ad account"
+    url: "https://www.facebook.com/business/help/915885887059947"
+    verified_at: 2026-09-02
+
+scope: doc_question
+handoff_note: ""
+
+corpus: meta_ads_help
+product: meta_ads
+
+aliases:
+  广告权限: "Ad account permissions"
+  广告主: "Advertiser role"
+
+related_ids:
+  - ads-business-portfolio
+  - ads-ad-account
+notes: "角色名称以帮助中心当前文案为准，回答时引导点开官方权限页对照，不背一份过时角色表。"

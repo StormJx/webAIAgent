@@ -1,0 +1,95 @@
+id: ads-create-campaign
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-09-02
+verified_at: 2026-09-02
+verified_by: Jay
+
+question: "在广告管理工具里怎么从零创建广告系列、广告组和广告"
+question_patterns:
+  - "在广告管理工具里怎么从零创建广告系列、广告组和广告"
+  - "怎么开广告"
+  - "怎么创建广告系列"
+  - "广告管理工具怎么用"
+  - "开始投放"
+  - "Ads Manager 怎么创建"
+keywords:
+  - 创建广告
+  - 广告管理工具
+  - ads manager
+  - 开广告
+  - 投放
+  - create campaign
+
+conclusion: "去广告管理工具点「创建」，按向导先建广告系列，再填广告组，最后上传创意。没有广告账户或没有权限时，这一步会卡住。"
+
+answer: |
+  **一句话：打开广告管理工具 → 点「创建」→ 先定系列目标，再配广告组，最后上传广告。账户和付款没准备好，向导会走不下去。**
+
+  ### 这是啥
+  「创建广告系列」是广告管理工具里的标准向导。官方顺序是：选购买类型和目标 → 配广告组（受众、版位、预算、排期）→ 做广告（素材、文案、去向）。
+
+  ### 怎么做
+  1. 打开广告管理工具：https://adsmanager.facebook.com
+  2. 点 **创建（Create）**。
+  3. **广告系列**：选购买类型（现在多数是成效），再选活动目标。
+  4. **广告组**：设预算和排期、受众、版位、优化与出价。
+  5. **广告**：上传图片或视频，写正文和标题，选行动号召和去向（网站、应用、WhatsApp 等，取决于目标）。
+  6. 发布前用预览看各版位长什么样，再提交。
+
+  官方也提到可以用 Ads Manager 手机应用创建，或从主页发起；主路径仍是电脑上的广告管理工具。
+
+  ### 开始之前先确认
+  - 已经有可用的广告账户，并且你对这个账户至少是广告主。
+  - 账户能付款（绑了付款方式，且没停在限制状态）。
+  - 如果要用像素优化转化，像素要先装好并能收到事件——否则「销量 / 转化」类目标后面很难配。
+
+  ### 官方说明
+  - [如何创建广告系列、广告组和广告](https://www.facebook.com/business/help/1658289035439772)
+  - [广告系列、广告组和广告](https://www.facebook.com/business/help/621956575422138)
+  - [如何添加或创建广告账户](https://www.facebook.com/business/help/915885887059947)
+  - [如何添加付款方式](https://www.facebook.com/business/help/132073386867900)
+
+  ### 容易踩的坑
+  - 用个人主页「推广帖子」和广告管理工具里的完整系列不是同一套界面；客户对不上步骤时，先确认他进的是 adsmanager。
+  - 选了转化类目标却没有像素 / 数据集，向导会反复要你补事件。
+  - 广告审核中或被拒：看广告管理工具里的投放状态和拒因，不要凭感觉改定向。
+  - 「帮我把获客成本压到某个数」：文档不保证效果，转人工。
+
+sources:
+  - type: official
+    title: "Create a campaign, ad set and ad"
+    url: "https://www.facebook.com/business/help/1658289035439772"
+    verified_at: 2026-09-02
+  - type: official
+    title: "About campaigns, ad sets and ads"
+    url: "https://www.facebook.com/business/help/621956575422138"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Add or create an ad account"
+    url: "https://www.facebook.com/business/help/915885887059947"
+    verified_at: 2026-09-02
+  - type: official
+    title: "Add a payment method"
+    url: "https://www.facebook.com/business/help/132073386867900"
+    verified_at: 2026-09-02
+
+scope: doc_question
+handoff_note: ""
+
+corpus: meta_ads_help
+product: meta_ads
+
+aliases:
+  广告管理工具: "Ads Manager"
+  开广告: "Create campaign"
+
+related_ids:
+  - ads-structure
+  - ads-ad-account
+  - ads-payment
+  - ads-pixel
+notes: "只写官方创建向导；不写出价技巧或素材话术。"

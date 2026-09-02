@@ -1,0 +1,59 @@
+id: refund-handoff
+status: verified
+source: manual
+origin: official_docs
+knowledge_type: official
+customer_confirmed: n/a
+created_at: 2026-08-15
+verified_at: 2026-08-29
+verified_by: Jay
+
+question: "我的账号使用你们的服务被 Meta 限制了，你要给我退款，补偿我"
+question_patterns:
+  - "你要给我退款，补偿我"
+  - "账号被限制了给我退款"
+  - "要赔偿"
+  - "赔钱"
+keywords:
+  - 退款
+  - 补偿
+  - 赔偿
+  - 赔钱
+
+conclusion: "退款、赔偿我处理不了，需要转人工。我只回答官方文档能支撑的问题，不能答应退钱，也不能替服务商或 Meta 出钱。"
+
+answer: |
+  **抱歉，退款 / 补偿这件事我帮不了，需要转人工。**
+
+  我是「Meta 文档答疑员」，只根据官方文档解释规则。  
+  **我不是 Meta 客服，也不是你付钱的那家服务商**，不能退款、不能赔偿、不能动账户或钱，也不会替你向 Meta 要补偿。
+
+  ### 钱的事该找谁
+  1. **跟 Meta 账单有争议** → 走 Meta 开发者支持（企业开发者可开官方直接支持工单）。
+  2. **钱是付给第三方服务商的** → 找那家售后；我不能代表他们答应任何事。
+  3. **只是对我上一句回答不满意** → 你可以换个具体文档问题让我重查；但退款 / 赔偿仍然超出我的职责。
+
+  这类诉求不在自动解答范围，请转人工处理。
+
+sources: []
+
+scope: handoff
+handoff_note: "整题转人工。禁止承诺退款、赔偿或代表服务商／Meta 作出财务承诺。"
+
+corpus: meta_developer_docs
+product: business_platform
+
+aliases: {}
+related_ids:
+  - ban-appeal
+notes: "已按通俗表达规范改写。纯边界拒绝样例；对齐展示页 data.js id=refund。"
+
+meta:
+  at: "20:31"
+  cost: "11 秒"
+  calls: 1
+steps:
+  - "分类判定：非文档问题，属权责／商务诉求"
+  - "命中「不允许做的事情」规则，跳过文档检索"
+  - "直接输出转人工声明，不做任何承诺"
+tone: handoff

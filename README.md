@@ -7,7 +7,7 @@
 - 首屏主按钮「添加飞书机器人」，导向飞书官方 AppLink
 - 三步添加说明；演示输入框命中回放库则回放，未命中则引导去飞书
 - 仿飞书聊天窗口的**真实问答回放**（4 组，全部取自 2026-08-15 实际会话原文）
-- 能力范围、工作流程、能力边界、运行记录、技术构成、隐私声明
+- 能力范围（WhatsApp 文档 + Meta 广告配置）、工作流程、能力边界、运行记录、技术构成、隐私声明
 
 ## 安全设计
 
@@ -26,7 +26,18 @@
 | `public/styles.css` | 样式 |
 | `public/app.js` | 对话回放、关键词匹配与飞书引流 |
 | `public/data.js` | 展示用问答数据（真实会话摘录，已脱敏） |
+| `faq/` | **本地 FAQ 知识库**（运行时真相源；含字段规范与维护规则） |
 | `vercel.json` | 部署配置与安全响应头 |
+
+## 本地 FAQ
+
+Agent 可复用的已验证问答在 `faq/verified/`。客户提问须等对方确认**已解决**后才能从 `pending/` 升入；实践经验与官方文档分开标注。规则见：
+
+- [`faq/README.md`](faq/README.md) — 维护流程、过期策略、与展示页关系
+- [`faq/SCHEMA.md`](faq/SCHEMA.md) — 字段定义与验收清单
+- [`faq/_template.yaml`](faq/_template.yaml) — 复制用空白模板
+
+**注意：** 更新知识内容时先改 `faq/`，再按需脱敏同步到 `public/data.js`；不要只改展示页。
 
 ## 本地预览
 
@@ -46,8 +57,14 @@ vercel --prod     # 部署并输出公开链接
 
 ## 更新内容
 
-- 增删展示问答：编辑 `data.js` 里的数组，每项含 `chip`（按钮文案）、`question`、`meta`（时间/耗时/调用次数）、`steps`（执行轨迹）、`answer`（HTML）
+- **增删 FAQ（优先）：** 客户案例先写 `faq/pending/`，确认已解决再移 `faq/verified/`；官方整理可走 `official_docs`
+- 增删展示问答：编辑 `data.js` 里的数组，每项含 `chip`（按钮文案）、`question`、`meta`（时间/耗时/调用次数）、`steps`（执行轨迹）、`answer`（HTML）；内容应与对应 FAQ 条目一致
 - 改文案与章节：编辑 `index.html`
 - 改完执行 `vercel --prod` 重新发布
 
-**注意：** 往 `data.js` 里加新问答时，先确认答案里不含账号 ID、聊天 ID、内部路径或任何凭证。
+**注意：** 往 `faq/` 或 `data.js` 里加内容时，先确认不含账号 ID、聊天 ID、内部路径或任何凭证。
+
+## Hermes / 飞书机器人（本地机密）
+
+飞书答疑机器人由本机 Hermes 运行，配置在 `~/.hermes/`，**不在**本静态站仓库的业务代码里。  
+如何把配置安全镜像到 `local/hermes/`（且永不进 GitHub）：见 [`docs/hermes-runtime.md`](docs/hermes-runtime.md)。
